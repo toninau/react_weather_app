@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const Search = () => {
+  const history = useHistory()
+
   const [city, setCity] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
     if (city.length > 0) {
       console.log(city)
+      history.push(`/${city}`)
     }
   }
 
