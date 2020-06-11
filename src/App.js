@@ -3,7 +3,6 @@ import {
   Switch,
   Route,
   Link,
-  useRouteMatch,
   Redirect,
   useLocation
 } from 'react-router-dom'
@@ -23,9 +22,8 @@ const Menu = () => {
   )
 }
 
+// /home /location * replacement
 const App = () => {
-  const match = useRouteMatch('/location/:city')
-
   return (
     <div>
       <Menu />
@@ -38,7 +36,10 @@ const App = () => {
           <p>Weather app home</p>
         </Route>
         <Route path="/location/:city">
-          <Weather match={match} />
+          <Weather />
+        </Route>
+        <Route path="/location">
+          <p>Enter location</p>
         </Route>
         <Route path="*">
           <NoMatch />

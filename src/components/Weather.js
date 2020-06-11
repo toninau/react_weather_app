@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { useRouteMatch } from 'react-router-dom'
 import axios from 'axios'
 
-const Weather = ({ match }) => {
-  const city = match.params.city
+const Weather = () => {
+  const { params: { city } } = useRouteMatch('/location/:city')
   const [weather, setWeather] = useState(null)
   const [loading, setLoading] = useState(true)
   // eslint-disable-next-line no-undef
@@ -15,7 +16,6 @@ const Weather = ({ match }) => {
       .get(url)
       .then(response => {
         setLoading(false)
-        console.log('promise fulfilled')
         setWeather(response.data)
       })
       .catch(() => {
