@@ -7,8 +7,8 @@ const Weather = () => {
   const [weather, setWeather] = useState(null)
   const [loading, setLoading] = useState(true)
   // eslint-disable-next-line no-undef
-  const api_key = process.env.REACT_APP_API_KEY
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`
+  const API_KEY = process.env.REACT_APP_API_KEY
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
 
   useEffect(() => {
     setLoading(true)
