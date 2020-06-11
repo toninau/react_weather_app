@@ -2,32 +2,18 @@ import React from 'react'
 import {
   Switch,
   Route,
-  Link,
   Redirect,
   useLocation
 } from 'react-router-dom'
 
-import Search from './components/SearchForm'
 import Weather from './components/Weather'
-
-const Menu = () => {
-  const padding = {
-    paddingRight: 5
-  }
-
-  return (
-    <div>
-      <Link style={padding} to="/">home</Link>
-    </div>
-  )
-}
+import Navbar from './components/Navbar'
 
 // /home /location * replacement
 const App = () => {
   return (
     <div>
-      <Menu />
-      <Search />
+      <Navbar />
       <Switch>
         <Route exact path="/">
           <Redirect to="/home" />
