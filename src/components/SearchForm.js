@@ -10,7 +10,7 @@ const Search = () => {
     event.preventDefault()
     if (city.length > 0) {
       console.log(city)
-      history.push(`/${city}`)
+      history.push(`/location/${city}`)
     }
   }
 

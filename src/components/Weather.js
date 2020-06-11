@@ -28,7 +28,7 @@ const Weather = ({ match }) => {
   if (weather) {
     return (
       <div>
-        <h3>Weather in {city}</h3>
+        <h3>Weather in {weather.name}</h3>
         <p>temperature: {weather.main.temp} Celcius</p>
       </div>
     )

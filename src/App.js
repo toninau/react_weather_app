@@ -1,7 +1,11 @@
 import React from 'react'
-
 import {
-  Switch, Route, Link, useRouteMatch
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  Redirect,
+  useLocation
 } from 'react-router-dom'
 
 import Search from './components/SearchForm'
@@ -20,20 +24,37 @@ const Menu = () => {
 }
 
 const App = () => {
-  const match = useRouteMatch('/:city')
+  const match = useRouteMatch('/location/:city')
 
   return (
     <div>
       <Menu />
       <Search />
       <Switch>
-        <Route path="/:city">
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
+        <Route path="/home">
+          <p>Weather app home</p>
+        </Route>
+        <Route path="/location/:city">
           <Weather match={match} />
         </Route>
-        <Route path="/">
-          <p>WEATHER APP</p>
+        <Route path="*">
+          <NoMatch />
         </Route>
       </Switch>
+    </div>
+  )
+}
+
+const NoMatch = () => {
+  let location = useLocation()
+  return (
+    <div>
+      <h3>
+        No match for <code>{location.pathname}</code>
+      </h3>
     </div>
   )
 }
