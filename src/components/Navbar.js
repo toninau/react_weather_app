@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <Link style={padding} to="/">home</Link>
+      <Link style={padding} to="/home">home</Link>
       <SearchForm />
     </div>
   )
