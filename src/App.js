@@ -9,7 +9,7 @@ import {
 import Weather from './components/Weather'
 import Navbar from './components/Navbar'
 
-// /home /location * replacement
+// /home /weather * replacement
 const App = () => {
   return (
     <div>
@@ -21,11 +21,11 @@ const App = () => {
         <Route path="/home">
           <p>Weather app home</p>
         </Route>
-        <Route path="/location/:city">
+        <Route path="/weather/:city">
           <Weather />
         </Route>
-        <Route path="/location">
-          <p>Enter location</p>
+        <Route path="/weather">
+          <p>Enter city</p>
         </Route>
         <Route path="*">
           <NoMatch />

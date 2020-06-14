@@ -8,7 +8,7 @@ const Search = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     if (city.length > 0) {
-      history.push(`/location/${city}`)
+      history.push(`/weather/${city}`)
     }
   }
 
