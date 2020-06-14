@@ -3,13 +3,12 @@ import {
   Switch,
   Route,
   Redirect,
-  useLocation
 } from 'react-router-dom'
 
 import Weather from './components/Weather'
 import Navbar from './components/Navbar'
+import NotFound from './components/NotFound'
 
-// /home /weather * replacement
 const App = () => {
   return (
     <div>
@@ -28,20 +27,9 @@ const App = () => {
           <p>Enter city</p>
         </Route>
         <Route path="*">
-          <NoMatch />
+          <NotFound />
         </Route>
       </Switch>
-    </div>
-  )
-}
-
-const NoMatch = () => {
-  let location = useLocation()
-  return (
-    <div>
-      <h3>
-        No match for <code>{location.pathname}</code>
-      </h3>
     </div>
   )
 }
