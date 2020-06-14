@@ -7,35 +7,69 @@ import WeatherDetails from './WeatherDetails'
 
 const Weather = () => {
   const { params: { city } } = useRouteMatch('/weather/:city')
-  const [weather, setWeather] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [show, setShow] = useState(false)
+  const [weatherBasic, setWeatherBasic] = useState(null)
+  const [weatherDetails, setWeatherDetails] = useState(null)
+  const [coord, setCoord] = useState({ lon: 0, lat: 0 })
+
+  const [loadingBasic, setLoadingBasic] = useState(true)
+  const [loadingDetails, setLoadingDetails] = useState(true)
+  const [showDetails, setShowDetails] = useState({ value: false, label: 'show more' })
+
   // eslint-disable-next-line no-undef
   const API_KEY = process.env.REACT_APP_API_KEY
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+  const urlBasic = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+  const urlDetails = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&exclude=current,minutely&appid=${API_KEY}&units=metric`
 
   useEffect(() => {
-    setLoading(true)
+    setLoadingBasic(true)
     axios
-      .get(url)
+      .get(urlBasic)
       .then(response => {
-        setWeather(response.data)
-        setLoading(false)
+        setWeatherBasic(response.data)
+        setCoord({ lon: response.data.coord.lon, lat: response.data.coord.lat })
+        setLoadingBasic(false)
       })
       .catch(() => {
-        setWeather(null)
-        setLoading(false)
+        setWeatherBasic(null)
+        setLoadingBasic(false)
       })
-  }, [url])
+  }, [urlBasic])
 
-  if (loading) return 'loading...'
-  if (weather) {
+  const getDetails = () => {
+    if (!weatherDetails) {
+      setLoadingDetails(true)
+      axios
+        .get(urlDetails)
+        .then(response => {
+          setWeatherDetails(response.data)
+          setLoadingDetails(false)
+        })
+        .catch(() => {
+          setWeatherDetails(null)
+          setLoadingDetails(false)
+        })
+    }
+    setShowDetails({ value: !showDetails.value, label: showDetails.value ? 'show more' : 'show less' })
+  }
+
+  const displayDetails = () => {
+    if (loadingDetails) return <p>loading details...</p>
+    if (weatherDetails) {
+      return (
+        <WeatherDetails weather={weatherDetails} />
+      )
+    }
+    return <p>no weather details</p>
+  }
+
+  if (loadingBasic) return <p>loading...</p>
+  if (weatherBasic) {
     return (
       <div>
-        <WeatherBasic weather={weather} />
-        {!show ?
-          <button onClick={() => setShow(!show)}>show more</button> :
-          <WeatherDetails coord={weather.coord} />
+        <WeatherBasic weather={weatherBasic} />
+        <button onClick={() => getDetails()}>{showDetails.label}</button>
+        {showDetails.value &&
+          displayDetails()
         }
       </div>
     )
