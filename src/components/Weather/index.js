@@ -25,6 +25,8 @@ const Weather = () => {
     axios
       .get(urlBasic)
       .then(response => {
+        setWeatherDetails(null)
+        setShowDetails({ value: false, label: 'show more' })
         setWeatherBasic(response.data)
         setCoord({ lon: response.data.coord.lon, lat: response.data.coord.lat })
         setLoadingBasic(false)

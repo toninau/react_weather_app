@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import Chart from 'chart.js'
 
-const WeatherGraph = ({ weatherData }) => {
+const WeatherChart = ({ weatherData }) => {
   const chartRef = React.createRef()
   const data = weatherData.map(w => w.temp.day)
   const labels = weatherData.map(w => {
     const dateObject = new Date(w.dt * 1000)
-    return dateObject.toLocaleString('en-US', { weekday: 'long', day: 'numeric', month: 'numeric' })
+    return dateObject.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'numeric' })
   })
 
   useEffect(() => {
@@ -19,19 +19,24 @@ const WeatherGraph = ({ weatherData }) => {
           {
             label: 'Temperatures',
             data: data,
+            backgroundColor: 'rgba(255, 204, 0, 0.2)',
+            borderColor: 'rgba(255, 204, 0, 1)'
           }
         ]
       },
       options: {
+        legend: {
+          display: false
+        },
       }
     })
   })
 
   return (
-    <div>
-      <canvas
-        ref={chartRef}
-      />
+    <div style={{ width: '600px' }}>
+      <canvas ref={chartRef}>
+        <p>Failed to load chart</p>
+      </canvas>
     </div>
   )
 }
@@ -40,7 +45,7 @@ const WeatherDetails = ({ weather }) => {
   return (
     <div>
       <h2>details</h2>
-      <WeatherGraph weatherData={weather.daily} />
+      <WeatherChart weatherData={weather.daily} />
     </div>
   )
 }
