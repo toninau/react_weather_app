@@ -3,10 +3,16 @@ import Chart from 'chart.js'
 
 const WeatherChart = ({ weatherData }) => {
   const chartRef = React.createRef()
-  const data = weatherData.map(w => w.temp.day)
+  const data = weatherData.map(w => w.main.temp)
   const labels = weatherData.map(w => {
     const dateObject = new Date(w.dt * 1000)
-    return dateObject.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'numeric' })
+    return dateObject.toLocaleString('en-US', {
+      weekday: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: false
+    })
   })
 
   useEffect(() => {
@@ -45,7 +51,7 @@ const WeatherDetails = ({ weather }) => {
   return (
     <div>
       <h2>details</h2>
-      <WeatherChart weatherData={weather.daily} />
+      <WeatherChart weatherData={weather.list} />
     </div>
   )
 }
