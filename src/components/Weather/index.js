@@ -4,11 +4,13 @@ import axios from 'axios'
 
 import WeatherBasic from './WeatherBasic'
 import WeatherDetails from './WeatherDetails'
+import WeatherChart from './WeatherChart'
+import WeatherForecast from './WeatherForecast'
 
 const Weather = () => {
   const { params: { city } } = useRouteMatch('/weather/:city')
   const [weatherBasic, setWeatherBasic] = useState(null)
-  const [weatherDetails, setWeatherDetails] = useState(null)
+  const [weatherForecast, setWeatherForecast] = useState(null)
   const [loading, setLoading] = useState(true)
   // eslint-disable-next-line no-undef
   const API_KEY = process.env.REACT_APP_API_KEY
@@ -21,12 +23,12 @@ const Weather = () => {
       .all([axios.get(urlBasic), axios.get(urlDetails)])
       .then(axios.spread((...responses) => {
         setWeatherBasic(responses[0].data)
-        setWeatherDetails(responses[1].data)
+        setWeatherForecast(responses[1].data)
         setLoading(false)
       }))
       .catch(() => {
         setWeatherBasic(null)
-        setWeatherDetails(null)
+        setWeatherForecast(null)
         setLoading(false)
       })
   }, [urlBasic, urlDetails])
@@ -36,7 +38,9 @@ const Weather = () => {
     return (
       <div>
         <WeatherBasic weather={weatherBasic} />
-        <WeatherDetails weather={weatherDetails} />
+        <WeatherForecast forecast={weatherForecast.list} />
+        <WeatherDetails weather={weatherBasic} />
+        <WeatherChart weatherData={weatherForecast.list} />
       </div>
     )
   }
