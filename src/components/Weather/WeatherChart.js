@@ -5,15 +5,17 @@ const WeatherChart = ({ weatherData }) => {
   const chartRef = React.createRef()
   const temperatureData = weatherData.map(w => w.main.temp)
   const rainData = weatherData.map(w => w.rain ? w.rain['3h'] : 0)
-  const labels = weatherData.map(w => {
-    const dateObject = new Date(w.dt * 1000)
-    return dateObject.toLocaleString('en-US', {
-      weekday: 'short',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: false
-    })
+  const labels = weatherData.map((wd, index) => {
+    const dateObject = new Date(wd.dt * 1000)
+    if (index === 0 || dateObject.getHours() === 0) {
+      const stringArray = [
+        dateObject.toLocaleString('en-US', { weekday: 'short' }),
+        dateObject.toLocaleString('en-US', { hour: 'numeric', hour12: false }),
+        dateObject.toLocaleString('en-US', { day: 'numeric', month: 'numeric' })
+      ]
+      return stringArray
+    }
+    return dateObject.toLocaleString('en-US', { hour: 'numeric', hour12: false })
   })
 
   useEffect(() => {
@@ -52,8 +54,7 @@ const WeatherChart = ({ weatherData }) => {
             type: 'linear',
             position: 'left',
             ticks: {
-              suggestedMin: 0,
-              suggestedMax: 35
+              callback: (value, index) => index === 0 ? '°C' : value
             }
           },
           {
@@ -62,7 +63,11 @@ const WeatherChart = ({ weatherData }) => {
             position: 'right',
             ticks: {
               suggestedMin: 0,
-              suggestedMax: 14
+              suggestedMax: 14,
+              callback: (value, index) => index === 0 ? 'mm' : value
+            },
+            gridLines: {
+              drawOnChartArea: false
             }
           }]
         }
@@ -71,7 +76,7 @@ const WeatherChart = ({ weatherData }) => {
   })
 
   return (
-    <div style={{ width: '600px' }}>
+    <div>
       <canvas ref={chartRef}>
         <p>Failed to load chart</p>
       </canvas>
