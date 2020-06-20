@@ -24,11 +24,12 @@ const Weather = () => {
       .then(axios.spread((...responses) => {
         setWeatherBasic(responses[0].data)
         setWeatherForecast(responses[1].data)
-        setLoading(false)
       }))
       .catch(() => {
         setWeatherBasic(null)
         setWeatherForecast(null)
+      })
+      .finally(() => {
         setLoading(false)
       })
   }, [urlBasic, urlDetails])
