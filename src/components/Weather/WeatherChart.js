@@ -31,7 +31,8 @@ const WeatherChart = ({ weatherData }) => {
             backgroundColor: 'rgba(255, 204, 0, 0.2)',
             borderColor: 'rgba(255, 204, 0, 1)',
             order: 1,
-            yAxisID: 'left-y-axis'
+            yAxisID: 'left-y-axis',
+            fill: 'start'
           },
           {
             label: 'rain',
@@ -62,7 +63,7 @@ const WeatherChart = ({ weatherData }) => {
             type: 'linear',
             position: 'right',
             ticks: {
-              suggestedMin: 0,
+              beginAtZero: true,
               suggestedMax: 14,
               callback: (value, index) => index === 0 ? 'mm' : value
             },
