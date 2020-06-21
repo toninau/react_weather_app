@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*Weather*/
+.container {
+  margin: auto;
+  border: 1px solid black;
+  max-width: 1162px;
+}
+
+/*All weather cards*/
+.weather-card {
+  padding: 2em;
+  margin: 3em 0;
+  border: 1px solid red;
+  border-radius: 25px;
+}
+
+/*Weather basic*/
+.weather-basic-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather-basic-temp {
+  display: flex;
+  align-items: center;
+}
+
+.weather-basic-minmax {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.weather-basic-desc {
+  display: flex;
+  flex-direction: column;
+}
