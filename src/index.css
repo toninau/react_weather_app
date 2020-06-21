@@ -28,14 +28,28 @@ code {
 }
 
 /*Weather basic*/
-.weather-basic-info {
+.weather-basic {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.weather-basic-info {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .weather-basic-temp {
   display: flex;
   align-items: center;
+}
+
+.weather-basic-temp #unit, #temp {
+  font-size: 6em  
+}
+
+.weather-basic-temp span {
+  font-size: 2em
 }
 
 .weather-basic-minmax {
@@ -47,4 +61,6 @@ code {
 .weather-basic-desc {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }

@@ -7,18 +7,20 @@ const WeatherBasic = ({ weather }) => {
   return (
     <div className="weather-card">
       <h2>Weather in {weather.name}</h2>
-      <div>
-        <p>as of {date}</p>
-        <p>local: {local}</p>
-      </div>
-      <div className="weather-basic-info">
-        <div className="weather-basic-temp">
-          <span>{Math.round(weather.main.temp)}</span>
-          <div className="weather-basic-minmax">
-            <span>{Math.round(weather.main.temp_max)}</span>
-            <span>{Math.round(weather.main.temp_min)}</span>
+      <div className="weather-basic">
+        <div className="weather-basic-info">
+          <div>
+            <p>as of {date}</p>
+            <p>local: {local}</p>
           </div>
-          <span>°C</span>
+          <div className="weather-basic-temp">
+            <span id="temp">{Math.round(weather.main.temp)}</span>
+            <div className="weather-basic-minmax">
+              <span>{Math.round(weather.main.temp_max)}</span>
+              <span>{Math.round(weather.main.temp_min)}</span>
+            </div>
+            <span id="unit">°C</span>
+          </div>
         </div>
         <div className="weather-basic-desc">
           <img src={image} alt="icon" />
