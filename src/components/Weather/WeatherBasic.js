@@ -1,19 +1,9 @@
 import React from 'react'
+import { localDateString } from '../../utils/date_functions'
 
 const WeatherBasic = ({ weather }) => {
   const image = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`
-  const date = new Date((weather.dt + weather.timezone) * 1000)
-  const formatter = new Intl.DateTimeFormat('en-GB', {
-    weekday: 'long',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    timeZone: 'UTC',
-    hour12: false
-  })
-  const dateFormatted = formatter.format(date)
+  const local = localDateString(weather.dt, weather.timezone)
 
   return (
     <div className="weather-card-basic">
@@ -28,7 +18,7 @@ const WeatherBasic = ({ weather }) => {
           <span id="unit">°C</span>
         </div>
         <div>
-          <p>local time {dateFormatted}</p>
+          <p>local time {local}</p>
         </div>
       </div>
       <div className="weather-basic-desc">

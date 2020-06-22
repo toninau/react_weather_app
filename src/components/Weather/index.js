@@ -39,7 +39,7 @@ const Weather = () => {
     return (
       <div className="weather-container">
         <WeatherBasic weather={weatherBasic} />
-        <WeatherForecast forecast={weatherForecast.list} />
+        <WeatherForecast forecast={weatherForecast.list} timezone={weatherBasic.timezone}/>
         <WeatherDetails weather={weatherBasic} />
         <WeatherChart weatherData={weatherForecast.list} />
       </div>
