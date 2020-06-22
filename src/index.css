@@ -13,7 +13,7 @@ code {
 }
 
 /*Weather*/
-.container {
+.weather-container {
   margin: auto;
   border: 1px solid black;
   max-width: 1162px;
@@ -30,13 +30,13 @@ code {
 /*Weather basic*/
 .weather-basic {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /*center*/
   flex-wrap: wrap;
 }
 
 .weather-basic-info {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
 .weather-basic-temp {
@@ -62,5 +62,9 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+}
+
+.weather-basic-desc img {
+  width: 200px;
 }
