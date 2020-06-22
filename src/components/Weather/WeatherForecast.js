@@ -12,6 +12,10 @@ const WeatherForecastSingle = ({ data, timezone }) => {
         <span>{Math.round(data.main.temp)}°C</span>
         <img src={image} alt={`Icon ${data.weather[0].description}`} />
       </div>
+      {data.rain ?
+        <p>{data.rain['3h']} mm rain</p> :
+        <p>no rain</p>
+      }
     </div>
   )
 }
