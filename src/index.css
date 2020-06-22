@@ -78,8 +78,8 @@ code {
 
 /*Weather forecast*/
 .weather-forecast-single {
-  padding: 2em;
-  margin: 1em 1em;
+  padding: 1em;
+  margin: 1em 0.5em;
   border: 1px solid blue;
   border-radius: 25px;
 }

@@ -3,13 +3,13 @@ import { localDateString } from '../../utils/date_functions'
 
 const WeatherForecastSingle = ({ data, timezone }) => {
   const image = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-  const local = localDateString(data.dt, timezone)
+  const local = localDateString(data.dt, timezone, 'forecast')
 
   return (
     <div className="weather-forecast-single">
       <p>{local}</p>
       <span>{Math.round(data.main.temp)}°C</span>
-      <img src={image} alt="icon" />
+      <img src={image} alt={`Icon ${data.weather[0].description}`} />
     </div>
   )
 }
