@@ -20,20 +20,27 @@ code {
 }
 
 /*All weather cards*/
-.weather-card {
+.weather-card-basic {
   padding: 2em;
   margin: 3em 0;
   border: 1px solid red;
   border-radius: 25px;
-}
-
-/*Weather basic*/
-.weather-basic {
   display: flex;
-  justify-content: space-between; /*center*/
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
+.weather-card-forecast {
+  padding: 2em; 
+  margin: 3em 0;
+  border: 1px solid green;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+/*Weather basic*/
 .weather-basic-info {
   display: flex;
   flex-direction: column;
@@ -67,4 +74,12 @@ code {
 
 .weather-basic-desc img {
   width: 200px;
+}
+
+/*Weather forecast*/
+.weather-forecast-single {
+  padding: 2em;
+  margin: 1em 1em;
+  border: 1px solid blue;
+  border-radius: 25px;
 }

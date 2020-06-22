@@ -16,27 +16,25 @@ const WeatherBasic = ({ weather }) => {
   const dateFormatted = formatter.format(date)
 
   return (
-    <div className="weather-card">
-      <div className="weather-basic">
-        <div className="weather-basic-info">
-          <h2>Weather in {weather.name}</h2>
-          <div className="weather-basic-temp">
-            <span id="temp">{Math.round(weather.main.temp)}</span>
-            <div className="weather-basic-minmax">
-              <span>{Math.round(weather.main.temp_max)}</span>
-              <span>{Math.round(weather.main.temp_min)}</span>
-            </div>
-            <span id="unit">°C</span>
+    <div className="weather-card-basic">
+      <div className="weather-basic-info">
+        <h2>Weather in {weather.name}</h2>
+        <div className="weather-basic-temp">
+          <span id="temp">{Math.round(weather.main.temp)}</span>
+          <div className="weather-basic-minmax">
+            <span>{Math.round(weather.main.temp_max)}</span>
+            <span>{Math.round(weather.main.temp_min)}</span>
           </div>
-          <div>
-            <p>local time {dateFormatted}</p>
-          </div>
+          <span id="unit">°C</span>
         </div>
-        <div className="weather-basic-desc">
-          <img src={image} alt="icon" />
-          <span>{weather.weather[0].main}</span>
-          <span>{weather.weather[0].description}</span>
+        <div>
+          <p>local time {dateFormatted}</p>
         </div>
+      </div>
+      <div className="weather-basic-desc">
+        <img src={image} alt="icon" />
+        <span>{weather.weather[0].main}</span>
+        <span>{weather.weather[0].description}</span>
       </div>
     </div>
   )

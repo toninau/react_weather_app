@@ -15,12 +15,12 @@ const Weather = () => {
   // eslint-disable-next-line no-undef
   const API_KEY = process.env.REACT_APP_API_KEY
   const urlBasic = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
-  const urlDetails = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
+  const urlForecast = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
 
   useEffect(() => {
     setLoading(true)
     axios
-      .all([axios.get(urlBasic), axios.get(urlDetails)])
+      .all([axios.get(urlBasic), axios.get(urlForecast)])
       .then(axios.spread((...responses) => {
         setWeatherBasic(responses[0].data)
         setWeatherForecast(responses[1].data)
@@ -32,7 +32,7 @@ const Weather = () => {
       .finally(() => {
         setLoading(false)
       })
-  }, [urlBasic, urlDetails])
+  }, [urlBasic, urlForecast])
 
   if (loading) return <p>loading...</p>
   if (weatherBasic) {
