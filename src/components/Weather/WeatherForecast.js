@@ -8,8 +8,10 @@ const WeatherForecastSingle = ({ data, timezone }) => {
   return (
     <div className="weather-forecast-single">
       <p>{local}</p>
-      <span>{Math.round(data.main.temp)}°C</span>
-      <img src={image} alt={`Icon ${data.weather[0].description}`} />
+      <div className="weather-forecast-info">
+        <span>{Math.round(data.main.temp)}°C</span>
+        <img src={image} alt={`Icon ${data.weather[0].description}`} />
+      </div>
     </div>
   )
 }

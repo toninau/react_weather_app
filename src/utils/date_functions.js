@@ -1,4 +1,4 @@
-const test = (type) => {
+const optionType = (type) => {
   switch (type) {
   case 'basic': {
     const options = {
@@ -29,7 +29,7 @@ const test = (type) => {
 }
 
 export const localDateString = (dt, timezone, type) => {
-  const options = test(type)
+  const options = optionType(type)
   const date = new Date((dt + timezone) * 1000)
   const formatter = new Intl.DateTimeFormat('en-GB', options)
   const dateFormatted = formatter.format(date)
