@@ -40,6 +40,13 @@ code {
   flex-wrap: wrap;
 }
 
+.weather-card-details {
+  padding: 2em; 
+  margin: 3em 0;
+  border: 1px solid cyan;
+  border-radius: 25px;
+}
+
 /*Weather basic*/
 .weather-basic-info {
   display: flex;
@@ -97,4 +104,53 @@ code {
 
 .weather-forecast-info span {
   font-size: 1.5em
+}
+
+/*Weather details*/
+.weather-details-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.weather-details-feels {
+  display: flex;
+  flex-direction: column;
+}
+
+#feels_like {
+  font-size: 3em;
+}
+
+.weather-details-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.weather-details-table {
+  display: flex;
+  border: 1px solid green;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 2em;
+  border-radius: 25px;
+  margin: 2em 2em 2em 0;
+}
+
+.weather-details-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.weather-details-wind {
+  flex-grow: 2;
+  border: 1px solid red;
+  border-radius: 15px;
+  padding: 2em;
 }

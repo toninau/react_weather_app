@@ -25,6 +25,15 @@ const optionType = (type) => {
     }
     return options
   }
+  case 'details': {
+    const options = {
+      hour: '2-digit',
+      minute: '2-digit',
+      timeZone: 'UTC',
+      hour12: false
+    }
+    return options
+  }
   default:
     return undefined
   }
