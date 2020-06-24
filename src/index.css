@@ -47,6 +47,13 @@ code {
   border-radius: 25px;
 }
 
+.weather-card-chart {
+  padding: 2em;
+  margin: 3em 0;
+  border: 1px solid magenta;
+  border-radius: 25px;
+}
+
 /*Weather basic*/
 .weather-basic-info {
   display: flex;

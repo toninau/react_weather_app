@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Chart from 'chart.js'
 
 const WeatherChart = ({ weatherData }) => {
@@ -17,6 +17,7 @@ const WeatherChart = ({ weatherData }) => {
     }
     return dateObject.toLocaleString('en-US', { hour: 'numeric', hour12: false })
   })
+  const [weather, setWeather] = useState(weatherData[0])
 
   useEffect(() => {
     const myChartRef = chartRef.current.getContext('2d')
@@ -46,6 +47,13 @@ const WeatherChart = ({ weatherData }) => {
         ]
       },
       options: {
+        aspectRatio: 1,
+        maintainAspectRatio: false,
+        onClick: (_, elements) => (elements.length) &&
+          setWeather(weatherData[elements[0]._index]),
+        animation: {
+          duration: 0
+        },
         legend: {
           display: false
         },
@@ -77,10 +85,15 @@ const WeatherChart = ({ weatherData }) => {
   })
 
   return (
-    <div>
-      <canvas ref={chartRef}>
-        <p>Failed to load chart</p>
-      </canvas>
+    <div className="weather-card-chart">
+      <div>
+        <p>{JSON.stringify(weather)}</p>
+      </div>
+      <div>
+        <canvas ref={chartRef}>
+          <p>Failed to load chart</p>
+        </canvas>
+      </div>
     </div>
   )
 }
