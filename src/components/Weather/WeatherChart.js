@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Chart from 'chart.js'
+
+import { useMountEffect } from '../../hooks'
 
 const WeatherChart = ({ weatherData }) => {
   const chartRef = React.createRef()
@@ -19,7 +21,7 @@ const WeatherChart = ({ weatherData }) => {
   })
   const [weather, setWeather] = useState(weatherData[0])
 
-  useEffect(() => {
+  useMountEffect(() => {
     const myChartRef = chartRef.current.getContext('2d')
     new Chart(myChartRef, {
       type: 'line',
