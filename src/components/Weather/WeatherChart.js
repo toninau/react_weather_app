@@ -91,10 +91,12 @@ const WeatherChart = ({ weatherData }) => {
       <div>
         <p>{JSON.stringify(weather)}</p>
       </div>
-      <div>
-        <canvas ref={chartRef}>
-          <p>Failed to load chart</p>
-        </canvas>
+      <div style={{ overflowX: 'scroll' }}>
+        <div style={{ width: '1500px' }}>
+          <canvas ref={chartRef}>
+            <p>Failed to load chart</p>
+          </canvas>
+        </div>
       </div>
     </div>
   )
