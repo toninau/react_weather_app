@@ -65,18 +65,18 @@ code {
   align-items: center;
 }
 
-.weather-basic-temp #unit, #temp {
+.weather-basic-temp > #unit, .weather-basic-temp > #temp {
   font-size: 6em  
-}
-
-.weather-basic-temp span {
-  font-size: 2em
 }
 
 .weather-basic-minmax {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.weather-basic-minmax > span {
+  font-size: 2em
 }
 
 .weather-basic-desc {
@@ -86,7 +86,7 @@ code {
   align-items: center;
 }
 
-.weather-basic-desc img {
+.weather-basic-desc > img {
   width: 200px;
 }
 
@@ -109,7 +109,7 @@ code {
   align-items: center;
 }
 
-.weather-forecast-info span {
+.weather-forecast-info > span {
   font-size: 1.5em
 }
 
@@ -168,4 +168,38 @@ code {
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid yellow;
+  border-radius: 15px;
+  padding: 1em;
+  margin: 2em;
+}
+
+.weather-chart-date {
+  padding: 0 2em;
+}
+
+.weather-chart-temperature {
+  display: flex;
+  align-items: center;
+}
+
+.weather-chart-temperature > #unit, .weather-chart-temperature > #temp {
+  font-size: 3em  
+}
+
+.weather-chart-minmax {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.weather-chart-minmax > span {
+  font-size: 1.1em
+}
+
+.weather-chart-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

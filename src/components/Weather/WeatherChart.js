@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Chart from 'chart.js'
 
 import { useMountEffect } from '../../hooks'
+import { localDateString } from '../../utils/date_functions'
 
 const WeatherChart = ({ weatherData }) => {
   const chartRef = React.createRef()
@@ -60,13 +61,13 @@ const WeatherChart = ({ weatherData }) => {
           display: false
         },
         tooltips: {
-          mode: 'index',
-          intersect: false,
+          enabled: false
         },
         elements: {
           point: {
             radius: 5,
-            hitRadius: 20
+            hitRadius: 20,
+            hoverRadius: 10
           }
         },
         scales: {
@@ -113,13 +114,26 @@ const WeatherChart = ({ weatherData }) => {
 }
 
 const WeatherChartInfo = ({ weather }) => {
+  const date = localDateString(weather.dt, 'basic')
+  const image = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
+
   return (
     <div className="weather-chart-info">
       <div className="weather-chart-date">
-        <span>date</span>
+        <span>{date}</span>
       </div>
       <div className="weather-chart-temperature">
-        <span>{Math.round(weather.main.temp)}</span>
+        <span id="temp">{Math.round(weather.main.temp)}</span>
+        <div className="weather-chart-minmax">
+          <span>{Math.round(weather.main.temp_max)}</span>
+          <span>{Math.round(weather.main.temp_min)}</span>
+        </div>
+        <span id="unit">°C</span>
+      </div>
+      <div className="weather-chart-desc">
+        <img src={image} alt={`Icon ${weather.weather[0].description}`} />
+        <span>{weather.weather[0].main}</span>
+        <span>{weather.weather[0].description}</span>
       </div>
     </div>
   )
