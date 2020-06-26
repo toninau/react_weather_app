@@ -1,9 +1,9 @@
 import React from 'react'
 import { localDateString } from '../../utils/date_functions'
 
-const WeatherForecastSingle = ({ data, timezone }) => {
+const WeatherForecastSingle = ({ data }) => {
   const image = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-  const local = localDateString(data.dt, timezone, 'forecast')
+  const local = localDateString(data.dt, 'forecast')
 
   return (
     <div className="weather-forecast-single">
@@ -20,13 +20,13 @@ const WeatherForecastSingle = ({ data, timezone }) => {
   )
 }
 
-const WeatherForecast = ({ forecast, timezone }) => {
+const WeatherForecast = ({ forecast }) => {
   const forecastData = forecast.slice(0, 4)
 
   return (
     <div className="weather-card-forecast">
       {forecastData.map(data => (
-        <WeatherForecastSingle key={data.dt} data={data} timezone={timezone} />
+        <WeatherForecastSingle key={data.dt} data={data} />
       ))}
     </div>
   )

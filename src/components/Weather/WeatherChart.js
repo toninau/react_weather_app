@@ -11,13 +11,13 @@ const WeatherChart = ({ weatherData }) => {
     const dateObject = new Date(wd.dt * 1000)
     if (index === 0 || dateObject.getHours() === 0) {
       const stringArray = [
-        dateObject.toLocaleString('en-US', { weekday: 'short' }),
-        dateObject.toLocaleString('en-US', { hour: 'numeric', hour12: false }),
-        dateObject.toLocaleString('en-US', { day: 'numeric', month: 'numeric' })
+        dateObject.toLocaleString('en-US', { weekday: 'short', timeZone: 'UTC' }),
+        dateObject.toLocaleString('en-US', { hour: 'numeric', hour12: false, timeZone: 'UTC' }),
+        dateObject.toLocaleString('en-US', { day: 'numeric', month: 'numeric', timeZone: 'UTC' })
       ]
       return stringArray
     }
-    return dateObject.toLocaleString('en-US', { hour: 'numeric', hour12: false })
+    return dateObject.toLocaleString('en-US', { hour: 'numeric', hour12: false, timeZone: 'UTC' })
   })
   const [weather, setWeather] = useState(weatherData[0])
 

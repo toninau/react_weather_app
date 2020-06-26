@@ -39,9 +39,9 @@ const optionType = (type) => {
   }
 }
 
-export const localDateString = (dt, timezone, type) => {
+export const localDateString = (dt, type) => {
   const options = optionType(type)
-  const date = new Date((dt + timezone) * 1000)
+  const date = new Date(dt * 1000)
   const formatter = new Intl.DateTimeFormat('en-GB', options)
   const dateFormatted = formatter.format(date)
   return dateFormatted

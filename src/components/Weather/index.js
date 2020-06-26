@@ -17,13 +17,30 @@ const Weather = () => {
   const urlBasic = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
   const urlForecast = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
 
+  const timeConverter = (weatherBasic, weatherForecast) => {
+    const timezone = weatherBasic.timezone
+    const basic = {
+      ...weatherBasic,
+      dt: weatherBasic.dt + timezone,
+      sys: {
+        sunrise: weatherBasic.sys.sunrise + timezone,
+        sunset: weatherBasic.sys.sunset + timezone
+      }
+    }
+    setWeatherBasic(basic)
+    const forecast = weatherForecast.list.map(weather => {
+      const weather3h = { ...weather, dt: weather.dt + timezone }
+      return weather3h
+    })
+    setWeatherForecast(forecast)
+  }
+
   useEffect(() => {
     setLoading(true)
     axios
       .all([axios.get(urlBasic), axios.get(urlForecast)])
       .then(axios.spread((...responses) => {
-        setWeatherBasic(responses[0].data)
-        setWeatherForecast(responses[1].data)
+        timeConverter(responses[0].data, responses[1].data)
       }))
       .catch(() => {
         setWeatherBasic(null)
@@ -39,9 +56,9 @@ const Weather = () => {
     return (
       <div className="weather-container">
         <WeatherBasic weather={weatherBasic} />
-        <WeatherForecast forecast={weatherForecast.list} timezone={weatherBasic.timezone}/>
+        <WeatherForecast forecast={weatherForecast} />
         <WeatherDetails weather={weatherBasic} />
-        <WeatherChart weatherData={weatherForecast.list} />
+        <WeatherChart weatherData={weatherForecast} />
       </div>
     )
   }

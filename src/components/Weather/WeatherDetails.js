@@ -2,8 +2,8 @@ import React from 'react'
 import { localDateString } from '../../utils/date_functions'
 
 const WeatherDetails = ({ weather }) => {
-  const sunrise = localDateString(weather.sys.sunrise, weather.timezone, 'details')
-  const sunset = localDateString(weather.sys.sunset, weather.timezone, 'details')
+  const sunrise = localDateString(weather.sys.sunrise, 'details')
+  const sunset = localDateString(weather.sys.sunset, 'details')
 
   const data = {
     humidity: `${weather.main.humidity} %`,
