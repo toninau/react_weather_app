@@ -161,3 +161,11 @@ code {
   border-radius: 15px;
   padding: 2em;
 }
+
+/*Weather chart*/
+.weather-chart-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

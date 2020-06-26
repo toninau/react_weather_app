@@ -59,6 +59,16 @@ const WeatherChart = ({ weatherData }) => {
         legend: {
           display: false
         },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+        },
+        elements: {
+          point: {
+            radius: 5,
+            hitRadius: 20
+          }
+        },
         scales: {
           yAxes: [{
             id: 'left-y-axis',
@@ -89,7 +99,7 @@ const WeatherChart = ({ weatherData }) => {
   return (
     <div className="weather-card-chart">
       <div>
-        <p>{JSON.stringify(weather)}</p>
+        <WeatherChartInfo weather={weather} />
       </div>
       <div style={{ overflowX: 'scroll' }}>
         <div style={{ width: '1500px' }}>
@@ -97,6 +107,19 @@ const WeatherChart = ({ weatherData }) => {
             <p>Failed to load chart</p>
           </canvas>
         </div>
+      </div>
+    </div>
+  )
+}
+
+const WeatherChartInfo = ({ weather }) => {
+  return (
+    <div className="weather-chart-info">
+      <div className="weather-chart-date">
+        <span>date</span>
+      </div>
+      <div className="weather-chart-temperature">
+        <span>{Math.round(weather.main.temp)}</span>
       </div>
     </div>
   )
