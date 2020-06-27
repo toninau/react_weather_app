@@ -2,25 +2,23 @@ import React, { useState } from 'react'
 import Chart from 'chart.js'
 
 import { useMountEffect } from '../../hooks'
-import { localDateString } from '../../utils/date_functions'
+import { localDateString, localDateArray } from '../../utils/date_functions'
 
 const WeatherChart = ({ weatherData }) => {
   const chartRef = React.createRef()
+
+  const [weather, setWeather] = useState(weatherData[0])
+
   const temperatureData = weatherData.map(w => w.main.temp)
   const rainData = weatherData.map(w => w.rain ? w.rain['3h'] : 0)
   const labels = weatherData.map((wd, index) => {
-    const dateObject = new Date(wd.dt * 1000)
-    if (index === 0 || dateObject.getHours() === 0) {
-      const stringArray = [
-        dateObject.toLocaleString('en-US', { weekday: 'short', timeZone: 'UTC' }),
-        dateObject.toLocaleString('en-US', { hour: 'numeric', hour12: false, timeZone: 'UTC' }),
-        dateObject.toLocaleString('en-US', { day: 'numeric', month: 'numeric', timeZone: 'UTC' })
-      ]
-      return stringArray
+    const dateString = localDateString(wd.dt, 'chart-basic')
+    if (index === 0 || dateString === '00') {
+      const dateArray = localDateArray(wd.dt, 'chart-new-day')
+      return dateArray
     }
-    return dateObject.toLocaleString('en-US', { hour: 'numeric', hour12: false, timeZone: 'UTC' })
+    return dateString
   })
-  const [weather, setWeather] = useState(weatherData[0])
 
   useMountEffect(() => {
     const myChartRef = chartRef.current.getContext('2d')

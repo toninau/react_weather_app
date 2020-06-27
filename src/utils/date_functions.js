@@ -34,6 +34,21 @@ const optionType = (type) => {
     }
     return options
   }
+  case 'chart-basic': {
+    const options = {
+      hour: '2-digit',
+      timeZone: 'UTC'
+    }
+    return options
+  }
+  case 'chart-new-day': {
+    const options = {
+      weekday: 'short',
+      hour: '2-digit',
+      timeZone: 'UTC'
+    }
+    return options
+  }
   default:
     return undefined
   }
@@ -45,4 +60,13 @@ export const localDateString = (dt, type) => {
   const formatter = new Intl.DateTimeFormat('en-GB', options)
   const dateFormatted = formatter.format(date)
   return dateFormatted
+}
+
+export const localDateArray = (dt, type) => {
+  const options = optionType(type)
+  const date = new Date(dt * 1000)
+  const formatter = new Intl.DateTimeFormat('en-GB', options)
+  const dateFormatted = formatter.formatToParts(date)
+  const dateArray = dateFormatted.filter(d => d.type !== 'literal').map(d => d.value)
+  return dateArray
 }
