@@ -130,6 +130,12 @@ const WeatherChartInfo = ({ weather }) => {
         </div>
         <span id="unit">°C</span>
       </div>
+      <div>
+        {weather.rain ?
+          <span>{weather.rain['3h']} mm</span> :
+          <span>no rain</span>
+        }
+      </div>
       <div className="weather-chart-desc">
         <img src={image} alt={`Icon ${weather.weather[0].description}`} />
         <span>{weather.weather[0].main}</span>

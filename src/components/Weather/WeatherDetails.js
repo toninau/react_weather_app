@@ -7,6 +7,7 @@ const WeatherDetails = ({ weather }) => {
 
   const data = {
     humidity: `${weather.main.humidity} %`,
+    rain: `${weather.rain ? weather.rain['1h'] : 0} mm`,
     pressure: `${weather.main.pressure} hPa`,
     visibility: `${weather.visibility} m`,
     'high/low': `${Math.round(weather.main.temp_max)}/${Math.round(weather.main.temp_min)} (°C)`

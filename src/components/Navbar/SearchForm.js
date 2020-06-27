@@ -18,7 +18,9 @@ const Search = () => {
         Search:
         <input type="text" value={city} onChange={({ target }) => setCity(target.value)} />
       </label>
-      <input type="button" value="X" onClick={() => setCity('')} />
+      {city.length > 0 &&
+        <input type="button" value="X" onClick={() => setCity('')} />
+      }
       <input type="submit" value="Submit" />
     </form>
   )
