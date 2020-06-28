@@ -8,6 +8,7 @@ import {
 import Weather from './components/Weather'
 import Navbar from './components/Navbar'
 import NotFound from './components/NotFound'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <NotFound />
         </Route>
       </Switch>
+      <Footer />
     </div>
   )
 }
