@@ -9,6 +9,7 @@ import Weather from './components/Weather'
 import Navbar from './components/Navbar'
 import NotFound from './components/NotFound'
 import Footer from './components/Footer'
+import Home from './components/Home'
 
 const App = () => {
   return (
@@ -19,13 +20,10 @@ const App = () => {
           <Redirect to="/home" />
         </Route>
         <Route path="/home">
-          <p>Weather app home</p>
+          <Home />
         </Route>
         <Route path="/weather/:city">
           <Weather />
-        </Route>
-        <Route path="/weather">
-          <p>Enter city</p>
         </Route>
         <Route path="*">
           <NotFound />

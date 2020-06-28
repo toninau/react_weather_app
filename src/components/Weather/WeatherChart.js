@@ -6,18 +6,18 @@ import { localDateString, localDateArray } from '../../utils/date_functions'
 
 const WeatherChart = ({ weatherData }) => {
   const chartRef = React.createRef()
-
   const [weather, setWeather] = useState(weatherData[0])
 
   const temperatureData = weatherData.map(w => w.main.temp)
   const rainData = weatherData.map(w => w.rain ? w.rain['3h'] : 0)
-  const labels = weatherData.map((wd, index) => {
-    const dateString = localDateString(wd.dt, 'chart-basic')
-    if (index === 0 || dateString === '00') {
-      const dateArray = localDateArray(wd.dt, 'chart-new-day')
+  let day = null
+  const labels = weatherData.map(w => {
+    const dateArray = localDateArray(w.dt, 'chart')
+    if (day !== dateArray[0]) {
+      day = dateArray[0]
       return dateArray
     }
-    return dateString
+    return dateArray[1]
   })
 
   useMountEffect(() => {

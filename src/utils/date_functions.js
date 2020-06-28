@@ -34,14 +34,7 @@ const optionType = (type) => {
     }
     return options
   }
-  case 'chart-basic': {
-    const options = {
-      hour: '2-digit',
-      timeZone: 'UTC'
-    }
-    return options
-  }
-  case 'chart-new-day': {
+  case 'chart': {
     const options = {
       weekday: 'short',
       hour: '2-digit',
