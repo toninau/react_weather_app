@@ -24,7 +24,7 @@ const WeatherForecast = ({ forecast }) => {
   const forecastData = forecast.slice(0, 4)
 
   return (
-    <div className="weather-card-forecast">
+    <div id="forecast" className="weather-card-forecast">
       {forecastData.map(data => (
         <WeatherForecastSingle key={data.dt} data={data} />
       ))}

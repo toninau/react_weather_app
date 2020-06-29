@@ -54,11 +54,19 @@ const Weather = () => {
   if (loading) return <p>loading...</p>
   if (weatherBasic) {
     return (
-      <div className="weather-container">
-        <WeatherBasic weather={weatherBasic} />
-        <WeatherForecast forecast={weatherForecast} />
-        <WeatherDetails weather={weatherBasic} />
-        <WeatherChart weatherData={weatherForecast} />
+      <div className="weather">
+        <div className="weather-links">
+          <a href="#basic">basic</a>
+          <a href="#forecast">forecast</a>
+          <a href="#details">details</a>
+          <a href="#chart">chart</a>
+        </div>
+        <div className="weather-container">
+          <WeatherBasic weather={weatherBasic} />
+          <WeatherForecast forecast={weatherForecast} />
+          <WeatherDetails weather={weatherBasic} />
+          <WeatherChart weatherData={weatherForecast} />
+        </div>
       </div>
     )
   }

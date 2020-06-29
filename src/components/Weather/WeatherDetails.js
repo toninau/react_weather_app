@@ -14,7 +14,7 @@ const WeatherDetails = ({ weather }) => {
   }
 
   return (
-    <div className="weather-card-details">
+    <div id="details" className="weather-card-details">
       <div className="weather-details-main">
         <div className="weather-details-feels">
           <span id="feels_like">{Math.round(weather.main.feels_like)}°C</span>

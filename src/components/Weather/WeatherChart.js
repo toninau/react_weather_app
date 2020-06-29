@@ -8,19 +8,19 @@ const WeatherChart = ({ weatherData }) => {
   const chartRef = React.createRef()
   const [weather, setWeather] = useState(weatherData[0])
 
-  const temperatureData = weatherData.map(w => w.main.temp)
-  const rainData = weatherData.map(w => w.rain ? w.rain['3h'] : 0)
-  let day = null
-  const labels = weatherData.map(w => {
-    const dateArray = localDateArray(w.dt, 'chart')
-    if (day !== dateArray[0]) {
-      day = dateArray[0]
-      return dateArray
-    }
-    return dateArray[1]
-  })
-
   useMountEffect(() => {
+    const temperatureData = weatherData.map(w => w.main.temp)
+    const rainData = weatherData.map(w => w.rain ? w.rain['3h'] : 0)
+    let day = null
+    const labels = weatherData.map(w => {
+      const dateArray = localDateArray(w.dt, 'chart')
+      if (day !== dateArray[0]) {
+        day = dateArray[0]
+        return dateArray
+      }
+      return dateArray[1]
+    })
+
     const myChartRef = chartRef.current.getContext('2d')
     new Chart(myChartRef, {
       type: 'line',
@@ -96,7 +96,7 @@ const WeatherChart = ({ weatherData }) => {
   })
 
   return (
-    <div className="weather-card-chart">
+    <div id="chart" className="weather-card-chart">
       <div>
         <WeatherChartInfo weather={weather} />
       </div>

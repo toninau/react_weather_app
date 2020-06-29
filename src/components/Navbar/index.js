@@ -4,13 +4,9 @@ import { Link } from 'react-router-dom'
 import SearchForm from './SearchForm'
 
 const Navbar = () => {
-  const padding = {
-    paddingRight: 5
-  }
-
   return (
-    <div>
-      <Link style={padding} to="/home">home</Link>
+    <div className="navbar">
+      <Link to="/home">home</Link>
       <SearchForm />
     </div>
   )

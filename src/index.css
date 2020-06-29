@@ -12,7 +12,31 @@ code {
     monospace;
 }
 
+/*navbar*/
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  background-color: orange;
+  padding: 1em;
+  top: 0;
+}
+
 /*Weather*/
+.weather {
+  background-color: lightgrey;
+}
+
+.weather-links {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+
+.weather-links > a {
+  width: min-content;
+}
+
 .weather-container {
   margin: auto;
   border: 1px solid black;
