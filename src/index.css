@@ -12,35 +12,48 @@ code {
     monospace;
 }
 
+/*ALL*/
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 /*navbar*/
 .navbar {
-  position: -webkit-sticky;
-  position: sticky;
   width: 100%;
   background-color: orange;
-  padding: 1em;
-  top: 0;
 }
 
 /*Weather*/
 .weather {
-  background-color: lightgrey;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.weather-container {
+  border: 1px solid black;
+  max-width: 1162px;
+  overflow: auto;
 }
 
 .weather-links {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  background-color: darkorange;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1270px) {
+  .weather-links {
+      flex-direction: row;    
+  }
 }
 
 .weather-links > a {
-  width: min-content;
-}
-
-.weather-container {
-  margin: auto;
-  border: 1px solid black;
-  max-width: 1162px;
+  padding: 1rem;
+  height: min-content;
 }
 
 /*All weather cards*/
