@@ -112,7 +112,7 @@ const WeatherChart = ({ weatherData }) => {
 }
 
 const WeatherChartInfo = ({ weather }) => {
-  const date = localDateString(weather.dt, 'basic')
+  const date = localDateString(weather.dt, 'chart-info')
   const image = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
 
   return (
@@ -121,12 +121,7 @@ const WeatherChartInfo = ({ weather }) => {
         <span>{date}</span>
       </div>
       <div className="weather-chart-temperature">
-        <span id="temp">{Math.round(weather.main.temp)}</span>
-        <div className="weather-chart-minmax">
-          <span>{Math.round(weather.main.temp_max)}</span>
-          <span>{Math.round(weather.main.temp_min)}</span>
-        </div>
-        <span id="unit">°C</span>
+        <span id="temp">{Math.round(weather.main.temp)}°C</span>
       </div>
       <div>
         {weather.rain ?
@@ -136,7 +131,6 @@ const WeatherChartInfo = ({ weather }) => {
       </div>
       <div className="weather-chart-desc">
         <img src={image} alt={`Icon ${weather.weather[0].description}`} />
-        <span>{weather.weather[0].main}</span>
         <span>{weather.weather[0].description}</span>
       </div>
     </div>

@@ -25,7 +25,10 @@ code {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
+  display: flex;
+  flex-direction: row;
   z-index: 1;
+  height: 44px;
 }
 
 /*Weather*/
@@ -45,7 +48,6 @@ code {
 .weather-links {
   display: flex;
   flex-direction: column;
-  background-color: darkorange;
   flex-wrap: wrap;
   position: sticky;
   position: -webkit-sticky;
@@ -60,10 +62,13 @@ code {
 
 @media only screen and (max-width: 1270px) {
   .weather-links {
+    background-color: darkorange;
     top: auto;
     flex-direction: row;
+    justify-content: center;
     position: fixed;   
     bottom: 0; 
+    width: 100%;
   }
 }
 
@@ -221,7 +226,7 @@ code {
   border: 1px solid yellow;
   border-radius: 15px;
   padding: 1em;
-  margin: 2em;
+  margin: 1em 0;
 }
 
 .weather-chart-date {
@@ -235,16 +240,6 @@ code {
 
 .weather-chart-temperature > #unit, .weather-chart-temperature > #temp {
   font-size: 3em  
-}
-
-.weather-chart-minmax {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.weather-chart-minmax > span {
-  font-size: 1.1em
 }
 
 .weather-chart-desc {

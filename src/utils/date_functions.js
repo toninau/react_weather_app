@@ -42,6 +42,18 @@ const optionType = (type) => {
     }
     return options
   }
+  case 'chart-info': {
+    const options = {
+      weekday: 'long',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      timeZone: 'UTC',
+      hour12: false
+    }
+    return options
+  }
   default:
     return undefined
   }
