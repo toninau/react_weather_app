@@ -22,6 +22,10 @@ code {
 .navbar {
   width: 100%;
   background-color: orange;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1;
 }
 
 /*Weather*/
@@ -43,17 +47,24 @@ code {
   flex-direction: column;
   background-color: darkorange;
   flex-wrap: wrap;
-}
-
-@media (max-width: 1270px) {
-  .weather-links {
-      flex-direction: row;    
-  }
+  position: sticky;
+  position: -webkit-sticky;
+  top: 44px;
+  height: fit-content;
 }
 
 .weather-links > a {
   padding: 1rem;
   height: min-content;
+}
+
+@media only screen and (max-width: 1270px) {
+  .weather-links {
+    top: auto;
+    flex-direction: row;
+    position: fixed;   
+    bottom: 0; 
+  }
 }
 
 /*All weather cards*/
