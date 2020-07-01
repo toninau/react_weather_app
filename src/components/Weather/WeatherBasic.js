@@ -17,13 +17,14 @@ const WeatherBasic = ({ weather }) => {
           </div>
           <span id="unit">°C</span>
         </div>
-        <div>
-          <p>local time {local}</p>
+        <div className="weather-basic-date">
+          <span>As of {local}</span>
+          <span>local time</span>
         </div>
       </div>
       <div className="weather-basic-desc">
-        <img src={image} alt="icon" />
         <span>{weather.weather[0].main}</span>
+        <img src={image} alt={`Icon ${weather.weather[0].description}`} />
         <span>{weather.weather[0].description}</span>
       </div>
     </div>

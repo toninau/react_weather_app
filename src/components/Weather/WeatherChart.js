@@ -48,6 +48,9 @@ const WeatherChart = ({ weatherData }) => {
         ]
       },
       options: {
+        hover: {
+          intersect: false
+        },
         aspectRatio: 1,
         maintainAspectRatio: false,
         onClick: (_, elements) => (elements.length) &&
@@ -97,9 +100,7 @@ const WeatherChart = ({ weatherData }) => {
 
   return (
     <div id="chart" className="weather-card-chart">
-      <div>
-        <WeatherChartInfo weather={weather} />
-      </div>
+      <WeatherChartInfo weather={weather} />
       <div style={{ overflowX: 'scroll' }}>
         <div style={{ width: '1500px' }}>
           <canvas ref={chartRef}>
@@ -120,14 +121,14 @@ const WeatherChartInfo = ({ weather }) => {
       <div className="weather-chart-date">
         <span>{date}</span>
       </div>
-      <div className="weather-chart-temperature">
+      <div className="weather-chart-values">
         <span id="temp">{Math.round(weather.main.temp)}°C</span>
-      </div>
-      <div>
-        {weather.rain ?
-          <span>{weather.rain['3h']} mm</span> :
-          <span>no rain</span>
-        }
+        <div>
+          {weather.rain ?
+            <span>{weather.rain['3h']} mm</span> :
+            <span>no rain</span>
+          }
+        </div>
       </div>
       <div className="weather-chart-desc">
         <img src={image} alt={`Icon ${weather.weather[0].description}`} />
