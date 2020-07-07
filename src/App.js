@@ -16,6 +16,7 @@ import Home from './components/Home'
 
 import weatherService from './services/weather'
 import { setWeather, clearWeather } from './reducers/weatherReducer'
+import { addWeather } from './reducers/weathersReducer'
 
 const App = () => {
   const dispatch = useDispatch()
@@ -25,7 +26,7 @@ const App = () => {
     dispatch(clearWeather())
     try {
       const weather = await weatherService.getWeather(city)
-      //dispatch weathers
+      dispatch(addWeather(weather))
       const forecast = await weatherService.getForecast(city)
       dispatch(setWeather(weather, forecast))
     } catch (exception) {
