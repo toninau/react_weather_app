@@ -6,7 +6,7 @@ const weathersReducer = (state = [], action) => {
     if (!state.some((w => w.id === action.data.id))) {
       return [...state, action.data]
     }
-    return state
+    return state.map(w => w.id === action.data.id ? action.data : w)
   }
   case 'REMOVE_WEATHER':
     return state.filter(w => w.id !== action.id)
@@ -22,7 +22,7 @@ export const addWeather = weather => {
       name: weather.name,
       icon: weather.weather[0].icon,
       temp: weather.main.temp,
-      date: new Date().toLocaleString()
+      date: weather.dt
     }
     dispatch({
       type: 'ADD_WEATHER',

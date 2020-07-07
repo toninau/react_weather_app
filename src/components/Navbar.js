@@ -14,17 +14,20 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <Link to="/home">home</Link>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Search:
-          <input type="text" value={city} onChange={({ target }) => setCity(target.value)} />
-        </label>
-        {city.length > 0 &&
-          <input type="button" value="X" onClick={() => setCity('')} />
-        }
-        <input type="submit" value="Submit" />
-      </form>
+      <div className="navbar-items">
+        <Link to="/home">home</Link>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Search:
+            <input type="text" value={city} onChange={({ target }) => setCity(target.value)} />
+          </label>
+          {city.length > 0 &&
+            <input type="button" value="X" onClick={() => setCity('')} />
+          }
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+
     </div>
   )
 }

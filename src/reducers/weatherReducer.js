@@ -11,22 +11,8 @@ const weatherReducer = (state = null, action) => {
   }
 }
 
-export const setWeather = (weatherBasic, weatherForecast) => {
+export const setWeather = (basic, forecast) => {
   return async dispatch => {
-    const timezone = weatherBasic.timezone
-    const basic = {
-      ...weatherBasic,
-      dt: weatherBasic.dt + timezone,
-      sys: {
-        sunrise: weatherBasic.sys.sunrise + timezone,
-        sunset: weatherBasic.sys.sunset + timezone
-      }
-    }
-    const forecast = weatherForecast.list.map(weather => {
-      const weather3h = { ...weather, dt: weather.dt + timezone }
-      return weather3h
-    })
-
     dispatch({
       type: 'SET_WEATHER',
       data: {

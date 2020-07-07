@@ -22,13 +22,31 @@ const App = () => {
   const dispatch = useDispatch()
   const history = useHistory()
 
+  const timezoneFix = (weatherBasic, weatherForecast) => {
+    const timezone = weatherBasic.timezone
+    const basic = {
+      ...weatherBasic,
+      dt: weatherBasic.dt + timezone,
+      sys: {
+        sunrise: weatherBasic.sys.sunrise + timezone,
+        sunset: weatherBasic.sys.sunset + timezone
+      }
+    }
+    const forecast = weatherForecast.list.map(weather => {
+      const weather3h = { ...weather, dt: weather.dt + timezone }
+      return weather3h
+    })
+    return { basic, forecast }
+  }
+
   const fetchWeather = async (city) => {
     dispatch(clearWeather())
     try {
-      const weather = await weatherService.getWeather(city)
-      dispatch(addWeather(weather))
-      const forecast = await weatherService.getForecast(city)
-      dispatch(setWeather(weather, forecast))
+      const weatherBasic = await weatherService.getWeather(city)
+      const weatherForecast = await weatherService.getForecast(city)
+      const { basic, forecast } = timezoneFix(weatherBasic, weatherForecast)
+      dispatch(addWeather(basic))
+      dispatch(setWeather(basic, forecast))
     } catch (exception) {
       history.push('/not_found')
     }
