@@ -54,7 +54,6 @@ code {
 }
 
 .weather-container {
-  border: 1px solid black;
   max-width: 1162px;
   overflow: auto;
 }
