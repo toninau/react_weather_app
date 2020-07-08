@@ -6,6 +6,7 @@ import WeatherBasic from './WeatherBasic'
 import WeatherDetails from './WeatherDetails'
 import WeatherChart from './WeatherChart'
 import WeatherForecast from './WeatherForecast'
+import WeatherSkeleton from './WeatherSkeleton'
 
 const Weather = ({ fetchWeather }) => {
   const { params: { city } } = useRouteMatch('/weather/:city')
@@ -33,7 +34,7 @@ const Weather = ({ fetchWeather }) => {
       </div>
     )
   }
-  return <p>loading...</p>
+  return <WeatherSkeleton />
 }
 
 export default Weather

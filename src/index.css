@@ -262,3 +262,26 @@ code {
   flex-direction: column;
   align-items: center;
 }
+
+/*Skeleton*/
+.weather-container-skeleton {
+  width: 1162px;
+  overflow: auto;
+}
+
+.skeleton-card {
+  border-radius: 25px;
+  margin: 3em 0;
+  width: 100%;
+  height: 339px;
+  color: #fff;
+  background: linear-gradient(120deg, lightgray, white, lightgray);
+  background-size: 300% 100%;
+  position: relative;
+  animation: bg-animation 2s ease-in-out infinite alternate;
+}
+
+@keyframes bg-animation {
+  from {background-position: right}
+  to {background-position: left}
+}
