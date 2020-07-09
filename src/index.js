@@ -11,7 +11,7 @@ import throttle from 'lodash/throttle'
 
 store.subscribe(throttle(() => {
   saveState({
-    weathers: store.getState().weathers
+    recentWeather: store.getState().recentWeather
   })
 }, 1000))
 

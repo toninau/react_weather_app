@@ -16,7 +16,7 @@ import Home from './components/Home'
 
 import weatherService from './services/weather'
 import { setWeather, clearWeather } from './reducers/weatherReducer'
-import { addWeather } from './reducers/weathersReducer'
+import { addWeather } from './reducers/recentWeatherReducer'
 
 const App = () => {
   const dispatch = useDispatch()

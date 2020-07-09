@@ -67,6 +67,19 @@ export const localDateString = (dt, type) => {
   return dateFormatted
 }
 
+export const userDateString = (dt) => {
+  const date = new Date(dt)
+  const formatter = new Intl.DateTimeFormat('en-GB', {
+    weekday: 'short',
+    hour: '2-digit',
+    minute: '2-digit',
+    month: '2-digit',
+    day: '2-digit'
+  })
+  const dateFormatted = formatter.format(date)
+  return dateFormatted
+}
+
 export const localDateArray = (dt, type) => {
   const options = optionType(type)
   const date = new Date(dt * 1000)

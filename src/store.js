@@ -3,13 +3,13 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import weatherReducer from './reducers/weatherReducer'
-import weathersReducer from './reducers/weathersReducer'
+import recentWeatherReducer from './reducers/recentWeatherReducer'
 
 import { loadState } from './utils/localStorage'
 
 const reducer = combineReducers({
   weather: weatherReducer,
-  weathers: weathersReducer
+  recentWeather: recentWeatherReducer
 })
 
 const persistedState = loadState()

@@ -127,8 +127,8 @@ code {
 
 .weather-card-previous {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  flex-wrap: wrap-reverse;
   justify-content: center;
 }
 
@@ -316,5 +316,5 @@ code {
 .skeleton-shape {
   background-color: rgba(0, 0, 0, 0.2);
   margin: 2em;
-  border-radius: 5px;
+  border-radius: 2px;
 }
