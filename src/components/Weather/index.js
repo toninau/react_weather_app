@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useRouteMatch } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import WeatherBasic from './WeatherBasic'
 import WeatherDetails from './WeatherDetails'
@@ -35,6 +36,10 @@ const Weather = ({ fetchWeather }) => {
     )
   }
   return <WeatherSkeleton />
+}
+
+Weather.propTypes = {
+  fetchWeather: PropTypes.func.isRequired
 }
 
 export default Weather

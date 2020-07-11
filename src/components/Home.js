@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 import { removeWeather } from '../reducers/recentWeatherReducer'
 import { localDateString, userDateString } from '../utils/date_functions'
@@ -20,9 +21,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      <div>
-        <p>get current location weather</p>
-      </div>
       <div className="weather-card-previous">
         {weathers.length ?
           weathers.map(w => (
@@ -53,6 +51,18 @@ const PreviousWeather = ({ weather, removeWeather }) => {
       <button onClick={() => removeWeather(weather.id)}>remove</button>
     </div>
   )
+}
+
+PreviousWeather.propTypes = {
+  weather: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    temp: PropTypes.number.isRequired,
+    localDate: PropTypes.number.isRequired,
+    userDate: PropTypes.number.isRequired
+  }).isRequired,
+  removeWeather: PropTypes.func.isRequired
 }
 
 export default Home

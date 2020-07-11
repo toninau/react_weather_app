@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { localDateString } from '../../utils/date_functions'
 
 const WeatherBasic = ({ weather }) => {
@@ -29,6 +31,17 @@ const WeatherBasic = ({ weather }) => {
       </div>
     </div>
   )
+}
+
+WeatherBasic.propTypes = {
+  weather: PropTypes.shape({
+    weather: PropTypes.array.isRequired,
+    main: PropTypes.objectOf(PropTypes.number).isRequired,
+    dt: PropTypes.number.isRequired,
+    timezone: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default WeatherBasic

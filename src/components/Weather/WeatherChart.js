@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import Chart from 'chart.js'
 
 import { useMountEffect } from '../../hooks'
@@ -136,6 +137,14 @@ const WeatherChartInfo = ({ weather }) => {
       </div>
     </div>
   )
+}
+
+WeatherChart.propTypes = {
+  weatherData: PropTypes.arrayOf(PropTypes.shape({
+    main: PropTypes.objectOf(PropTypes.number).isRequired,
+    weather: PropTypes.array.isRequired,
+    dt: PropTypes.number.isRequired
+  })).isRequired
 }
 
 export default WeatherChart
