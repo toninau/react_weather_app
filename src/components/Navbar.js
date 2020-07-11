@@ -1,15 +1,12 @@
 import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const Navbar = () => {
-  const history = useHistory()
+const Navbar = ({ submit }) => {
   const [city, setCity] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (city.length > 0) {
-      history.push(`/weather/${city}`)
-    }
+    submit(city)
   }
 
   return (
@@ -27,7 +24,6 @@ const Navbar = () => {
           <input type="submit" value="Submit" />
         </form>
       </div>
-
     </div>
   )
 }

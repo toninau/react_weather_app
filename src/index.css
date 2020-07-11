@@ -40,9 +40,20 @@ code {
 /*Home*/
 .home {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.home-search {
+  width: 100%;
+  height: 500px;
+  background-color: darkorange;
+  display: flex;
+}
+
+.home-search > form {
+  margin: auto;
 }
 
 /*Weather*/

@@ -52,17 +52,23 @@ const App = () => {
     }
   }
 
+  const submit = (city) => {
+    if (city.length > 0) {
+      history.push(`/weather/${city}`)
+    }
+  }
+
   return (
     <div className="container">
-      <Navbar />
       <Switch>
         <Route exact path="/">
           <Redirect to="/home" />
         </Route>
         <Route path="/home">
-          <Home />
+          <Home submit={submit} />
         </Route>
         <Route path="/weather/:city">
+          <Navbar submit={submit} />
           <Weather fetchWeather={fetchWeather} />
         </Route>
         <Route path="/not_found">

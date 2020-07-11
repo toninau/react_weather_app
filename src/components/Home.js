@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
@@ -7,9 +7,10 @@ import { removeWeather } from '../reducers/recentWeatherReducer'
 import { localDateString, userDateString } from '../utils/date_functions'
 import { clearWeather } from '../reducers/weatherReducer'
 
-const Home = () => {
+const Home = ({ submit }) => {
   const weathers = useSelector(state => state.recentWeather)
   const dispatch = useDispatch()
+  const [city, setCity] = useState('')
 
   useEffect(() => {
     dispatch(clearWeather())
@@ -19,8 +20,25 @@ const Home = () => {
     dispatch(removeWeather(id))
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    submit(city)
+  }
+
   return (
     <div className="home">
+      <div className="home-search">
+        <form onSubmit={handleSubmit}>
+          <label>
+            Search:
+            <input type="text" value={city} onChange={({ target }) => setCity(target.value)} />
+          </label>
+          {city.length > 0 &&
+            <input type="button" value="X" onClick={() => setCity('')} />
+          }
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
       <div className="weather-card-previous">
         {weathers.length ?
           weathers.map(w => (
