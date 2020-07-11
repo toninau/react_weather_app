@@ -71,6 +71,10 @@ const PreviousWeather = ({ weather, removeWeather }) => {
   )
 }
 
+Home.propTypes = {
+  submit: PropTypes.func.isRequired
+}
+
 PreviousWeather.propTypes = {
   weather: PropTypes.shape({
     id: PropTypes.number.isRequired,
