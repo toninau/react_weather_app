@@ -6,9 +6,11 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
+    "eslint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "install:ui": "cd client && npm install",
     "build:ui": "cd client && rm -rf build && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint:ui": "cd client && npm run eslint"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,8 @@
   },
   "homepage": "https://github.com/toninau/react_weather_app#readme",
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "eslint": "^6.6.0"
   },
   "dependencies": {
     "axios": "^0.19.2",
