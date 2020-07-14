@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Switch,
   Route,
   Redirect,
-  useHistory
+  useHistory,
+  useLocation
 } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
@@ -60,6 +61,7 @@ const App = () => {
 
   return (
     <div className="container">
+      <ScrollToTop />
       <Switch>
         <Route exact path="/">
           <Redirect to="/home" />
@@ -81,6 +83,15 @@ const App = () => {
       <Footer />
     </div>
   )
+}
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
 }
 
 export default App
