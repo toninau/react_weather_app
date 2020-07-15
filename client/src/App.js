@@ -14,6 +14,7 @@ import PageNotFound from './components/PageNotFound'
 import CityNotFound from './components/CityNotFound'
 import Footer from './components/Footer'
 import Home from './components/Home'
+import TooManyRequests from './components/TooManyRequests'
 
 import weatherService from './services/weather'
 import { setWeather, clearWeather } from './reducers/weatherReducer'
@@ -48,8 +49,12 @@ const App = () => {
       const { basic, forecast } = timezoneFix(weatherBasic, weatherForecast)
       dispatch(addWeather(basic))
       dispatch(setWeather(basic, forecast))
-    } catch (exception) {
-      history.push('/not_found')
+    } catch (error) {
+      if (error.response.status === 429) {
+        history.push('/no_more')
+      } else {
+        history.push('/not_found')
+      }
     }
   }
 
@@ -75,6 +80,9 @@ const App = () => {
         </Route>
         <Route path="/not_found">
           <CityNotFound />
+        </Route>
+        <Route path="/no_more">
+          <TooManyRequests />
         </Route>
         <Route path="*">
           <PageNotFound />
