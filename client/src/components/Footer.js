@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div style={{ backgroundColor: 'blue', padding: '2em 2em 4em' }}>
+    <div className="footer">
       <footer>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum ipsum velit, lobortis ultricies magna sagittis nec. In vel nisl suscipit, placerat ante nec, dapibus est. Sed varius lacus sed feugiat venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sollicitudin condimentum nisl ac finibus. Nam imperdiet urna eget semper pulvinar. Suspendisse a mollis quam, sed tempus arcu. Etiam vitae suscipit ante, id commodo mi. Aliquam erat volutpat. Ut elit diam, accumsan id enim et, convallis dignissim magna. Phasellus pulvinar viverra lorem a condimentum. Ut gravida pharetra enim, feugiat sagittis sem luctus ac.

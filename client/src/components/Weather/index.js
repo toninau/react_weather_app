@@ -9,6 +9,8 @@ import WeatherChart from './WeatherChart'
 import WeatherForecast from './WeatherForecast'
 import WeatherSkeleton from './WeatherSkeleton'
 
+import './weather.css'
+
 const Weather = ({ fetchWeather }) => {
   const { params: { city } } = useRouteMatch('/weather/:city')
   const weather = useSelector(state => state.weather)

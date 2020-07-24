@@ -65,7 +65,7 @@ const App = () => {
   }
 
   return (
-    <div className="container">
+    <>
       <ScrollToTop />
       <Switch>
         <Route exact path="/">
@@ -75,8 +75,10 @@ const App = () => {
           <Home submit={submit} />
         </Route>
         <Route path="/weather/:city">
-          <Navbar submit={submit} />
-          <Weather fetchWeather={fetchWeather} />
+          <div className="container">
+            <Navbar submit={submit} />
+            <Weather fetchWeather={fetchWeather} />
+          </div>
         </Route>
         <Route path="/not_found">
           <CityNotFound />
@@ -89,7 +91,7 @@ const App = () => {
         </Route>
       </Switch>
       <Footer />
-    </div>
+    </>
   )
 }
 

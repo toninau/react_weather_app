@@ -1,0 +1,267 @@
+/*Weather*/
+
+.weather {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.weather-container {
+  max-width: 1162px;
+  overflow: auto;
+}
+
+.weather-links {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 44px;
+  height: fit-content;
+  z-index: 1;
+}
+
+.weather-links>a {
+  padding: 1em;
+  height: min-content;
+}
+
+/*All weather cards*/
+
+.weather-card-basic {
+  padding: 2em;
+  margin: 3em 0;
+  border: 1px solid red;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.weather-card-forecast {
+  padding: 2em;
+  margin: 3em 0;
+  border: 1px solid green;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.weather-card-details {
+  padding: 2em;
+  margin: 3em 0;
+  border: 1px solid cyan;
+  border-radius: 25px;
+}
+
+.weather-card-chart {
+  padding: 2em;
+  margin: 3em 0;
+  border: 1px solid magenta;
+  border-radius: 25px;
+}
+
+/*Weather basic*/
+
+.weather-basic-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-basic-temp {
+  display: flex;
+  align-items: center;
+}
+
+.weather-basic-temp>#unit, .weather-basic-temp>#temp {
+  font-size: 6em
+}
+
+.weather-basic-minmax {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.weather-basic-minmax>span {
+  font-size: 2em
+}
+
+.weather-basic-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-basic-date {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2em;
+}
+
+.weather-basic-desc>img {
+  width: 200px;
+}
+
+/*Weather forecast*/
+
+.weather-forecast-single {
+  padding: 1em;
+  margin: 1em 0.5em;
+  border: 1px solid blue;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-forecast-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.weather-forecast-info>span {
+  font-size: 1.5em
+}
+
+/*Weather details*/
+
+.weather-details-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.weather-details-feels {
+  display: flex;
+  flex-direction: column;
+}
+
+#feels_like {
+  font-size: 3em;
+}
+
+.weather-details-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.weather-details-table {
+  display: flex;
+  border: 1px solid green;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 2em;
+  border-radius: 25px;
+  margin: 1em;
+}
+
+.weather-details-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.weather-details-wind {
+  flex-grow: 2;
+  border: 1px solid red;
+  border-radius: 15px;
+  padding: 2em;
+  margin: 1em;
+}
+
+/*Weather chart*/
+
+.weather-chart-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid yellow;
+  border-radius: 15px;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.weather-chart-date {
+  padding: 0 2em;
+}
+
+.weather-chart-values {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.weather-chart-values>#temp {
+  font-size: 3em
+}
+
+.weather-chart-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Skeleton*/
+
+.weather-container-skeleton {
+  width: 1162px;
+  overflow: auto;
+}
+
+.skeleton-card {
+  border-radius: 25px;
+  margin: 3em 0;
+  color: #fff;
+  background: linear-gradient(120deg, #d9d9d9, #fff, #d9d9d9);
+  background-size: 400%;
+  position: relative;
+  animation: bg-animation 1.5s cubic-bezier(0.1, -0.1, 0.2, 0.045) infinite alternate;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1em;
+}
+
+@keyframes bg-animation {
+  from {
+    background-position: right
+  }
+  to {
+    background-position: left
+  }
+}
+
+.skeleton-shape {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 2em;
+  border-radius: 2px;
+}
+
+@media only screen and (max-width: 1270px) {
+  .weather-links {
+    background-color: darkorange;
+    top: auto;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  .weather-links>a {
+    padding: 0.2em 0.5em;
+  }
+}
