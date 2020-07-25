@@ -20,6 +20,7 @@ export const addWeather = weather => {
       id: weather.id,
       name: weather.name,
       icon: weather.weather[0].icon,
+      desc: weather.weather[0].main,
       temp: weather.main.temp,
       localDate: weather.dt,
       userDate: new Date().getTime()

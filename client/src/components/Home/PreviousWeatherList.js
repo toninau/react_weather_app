@@ -38,15 +38,15 @@ const PreviousWeather = ({ weather, removeWeather }) => {
           <h3>{weather.name}</h3>
           <div className="weather-previous-info">
             <p className="weather-previous-temp">{Math.round(weather.temp)}°C</p>
-            <img src={image} alt="weather icon" />
+            <img title={weather.desc} src={image} alt={`${weather.desc} icon`} />
           </div>
           <table>
             <tbody>
               <tr>
-                <th>
+                <th title="Date of data in local time">
                   <i className="material-icons">public</i>
                 </th>
-                <th>
+                <th title="Date of search">
                   <i className="material-icons">face</i>
                 </th>
               </tr>
@@ -70,6 +70,7 @@ PreviousWeather.propTypes = {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
     temp: PropTypes.number.isRequired,
     localDate: PropTypes.number.isRequired,
     userDate: PropTypes.number.isRequired
