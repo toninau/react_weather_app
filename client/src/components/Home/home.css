@@ -140,6 +140,7 @@
   background-color: transparent;
   border: none;
   outline: none;
+  user-select: none;
 }
 
 #scroll-button>i {
@@ -241,7 +242,7 @@
               -7px -7px 14px var(--previous-weather-color),
               -7px -7px 14px #d9eae0 inset, 
               7px 7px 14px #9fada6 inset;
-  min-width: 200px;
+  width: 230px;
 }
 
 .weather-previous-zone:hover {
