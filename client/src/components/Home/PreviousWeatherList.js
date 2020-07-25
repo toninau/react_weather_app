@@ -4,14 +4,7 @@ import PropTypes from 'prop-types'
 
 import { localDateString, userDateString } from '../../utils/date_functions'
 
-const PreviousWeatherList = React.forwardRef(({ weathers, removeWeather }, ref) => {
-
-  const topScroll = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-  }
+const PreviousWeatherList = React.forwardRef(({ weathers, removeWeather, focus }, ref) => {
 
   return (
     <div ref={ref} className="weather-card-previous">
@@ -23,7 +16,7 @@ const PreviousWeatherList = React.forwardRef(({ weathers, removeWeather }, ref) 
               removeWeather={removeWeather}
             />
           )) :
-          <div id="no-previous-searches" onClick={topScroll}>
+          <div id="no-previous-searches" onClick={focus}>
             <h2>no previous searches</h2>
             <p>start by entering a location above</p>
           </div>

@@ -17,6 +17,7 @@ const Home = ({ submit }) => {
   const dispatch = useDispatch()
   const locationRef = useRef(null)
   const buttonRef = useRef(null)
+  const searchFormRef = useRef(null)
 
   useEffect(() => {
     dispatch(clearWeather())
@@ -46,13 +47,21 @@ const Home = ({ submit }) => {
     })
   }
 
+  const focusSearchFormInput = () => {
+    searchFormRef.current.focusOnInput()
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <>
       <div className="home-landing">
         <img className="sun" src={sun} alt="sun" />
         <div className="home-box">
           <h1>Weather</h1>
-          <SearchForm handleSubmit={submit} />
+          <SearchForm handleSubmit={submit} ref={searchFormRef} />
         </div>
       </div>
       <button ref={buttonRef} id="scroll-button" onClick={() => buttonScroll()}>
@@ -62,6 +71,7 @@ const Home = ({ submit }) => {
         ref={locationRef}
         weathers={weathers}
         removeWeather={removePreviousWeather}
+        focus={focusSearchFormInput}
       />
     </>
   )
