@@ -41,9 +41,9 @@ const Home = ({ submit }) => {
   }
 
   const buttonScroll = () => {
-    locationRef.current.scrollIntoView({
+    window.scrollTo({
+      top: locationRef.current.offsetHeight,
       behavior: 'smooth',
-      block: 'center'
     })
   }
 
@@ -57,7 +57,7 @@ const Home = ({ submit }) => {
 
   return (
     <>
-      <div className="home-landing">
+      <div ref={locationRef} className="home-landing">
         <img className="sun" src={sun} alt="sun" />
         <div className="home-box">
           <h1>Weather</h1>
@@ -68,7 +68,6 @@ const Home = ({ submit }) => {
         <i className="material-icons">expand_more</i>
       </button>
       <PreviousWeatherList
-        ref={locationRef}
         weathers={weathers}
         removeWeather={removePreviousWeather}
         focus={focusSearchFormInput}

@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 
 import { localDateString, userDateString } from '../../utils/date_functions'
 
-const PreviousWeatherList = React.forwardRef(({ weathers, removeWeather, focus }, ref) => {
+const PreviousWeatherList = ({ weathers, removeWeather, focus }) => {
 
   return (
-    <div ref={ref} className="weather-card-previous">
+    <div className="weather-card-previous">
       <div className="scroll-box">
         {weathers.length ?
           weathers.map(w => (
@@ -24,10 +24,7 @@ const PreviousWeatherList = React.forwardRef(({ weathers, removeWeather, focus }
       </div>
     </div>
   )
-})
-
-PreviousWeatherList.displayName = 'PreviousWeatherList'
-
+}
 
 const PreviousWeather = ({ weather, removeWeather }) => {
   const localTime = localDateString(weather.localDate, 'forecast')
