@@ -275,7 +275,7 @@ th>i {
 }
 
 #no-previous-searches {
-  width: 100vh;
+  padding: 0 3em;
   text-align: center;
   cursor: pointer;
   color: var(--main-font-color);
