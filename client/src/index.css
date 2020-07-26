@@ -24,11 +24,68 @@ html, body, #root {
   flex-direction: column;
 }
 
+/* Footer */
 .footer {
-  background-color: paleturquoise; 
-  padding: 2em 2em 4em;
+  background-color: #313336; /*#DAF5D5, #313336, #DCDAFA, #DAFAFA, #4E4A8F*/
+  padding: 2em 1.5em 0;
   position: relative;
   z-index: 2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info {
+  border-top: 2px solid #383b3e;
+  padding: 2em 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-maker {
+  padding: 1.5em;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#top-button {
+  color: #73899f;
+  border: none;
+  cursor: pointer;
+  padding: 0.8em;
+  background: linear-gradient(-45deg, #2c2e31, #34373a);
+  box-shadow: 5px 5px 10px #2a2b2e, 
+              -5px -5px 10px #383b3e;
+  border-radius: 15px;
+  outline: none;
+  user-select: none;
+}
+
+#top-button:hover {
+  background: linear-gradient(135deg, #2c2e31, #34373a);
+}
+
+#top-button:active {
+  background: #313336;
+  box-shadow: inset 5px 5px 10px #2a2b2e, 
+              inset -5px -5px 10px #383b3e;
+  color: #75b0f1;
+}
+
+#top-button i {
+  vertical-align: middle;
+}
+
+#github {
+  border-radius: 15px;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  background: linear-gradient(135deg, #2c2e31, #34373a);
+  box-shadow: 5px 5px 10px #2a2b2e, 
+              -5px -5px 10px #383b3e;
 }
 
 /*navbar*/
