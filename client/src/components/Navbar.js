@@ -13,16 +13,21 @@ const Navbar = ({ submit }) => {
   return (
     <div className="navbar">
       <div className="navbar-items">
-        <Link to="/home">home</Link>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Search:
+        <Link to="/home">
+          <i id="home-icon" className="material-icons">home</i>
+        </Link>
+        <form className="navbar-search" onSubmit={handleSubmit}>
+          <button id="navbar-icon">
+            <i className="material-icons">search</i>
+          </button>
+          <div className="navbar-input">
             <input type="text" value={city} onChange={({ target }) => setCity(target.value)} />
-          </label>
-          {city.length > 0 &&
-            <input type="button" value="X" onClick={() => setCity('')} />
-          }
-          <input type="submit" value="Submit" />
+            {city.length > 0 &&
+              <button type="button" onClick={() => setCity('')}>
+                <i className="material-icons">close</i>
+              </button>
+            }
+          </div>
         </form>
       </div>
     </div>

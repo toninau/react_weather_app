@@ -18,7 +18,7 @@
   flex-wrap: wrap;
   position: sticky;
   position: -webkit-sticky;
-  top: 44px;
+  top: 72px;
   height: fit-content;
   z-index: 1;
 }
