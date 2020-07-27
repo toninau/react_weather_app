@@ -1,6 +1,7 @@
 import React from 'react'
 
-import logo from '../img/GitHub-32px.png'
+import githubLogo from '../img/GitHub-32px.png'
+import linkedinLogo from '../img/LinkedIn-32px.png'
 
 const Footer = () => {
 
@@ -15,7 +16,10 @@ const Footer = () => {
     <div className="footer">
       <div>
         <a href="https://github.com/toninau">
-          <img id="github" src={logo} alt="github" />
+          <img className="social-icon" src={githubLogo} alt="gitHub" />
+        </a>
+        <a href="https://www.linkedin.com/in/toni-naumanen-232b83190/">
+          <img className="social-icon" src={linkedinLogo} alt="linkedIn" />
         </a>
       </div>
       <div className="footer-info">

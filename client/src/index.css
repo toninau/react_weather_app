@@ -79,13 +79,14 @@ html, body, #root {
   vertical-align: middle;
 }
 
-#github {
+.social-icon {
   border-radius: 15px;
   padding: 0.5em;
   margin-bottom: 0.5em;
   background: linear-gradient(135deg, #2c2e31, #34373a);
   box-shadow: 5px 5px 10px #2a2b2e, 
               -5px -5px 10px #383b3e;
+  margin-right: 0.7em;
 }
 
 /*navbar*/
