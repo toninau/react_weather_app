@@ -113,6 +113,8 @@
   border-radius: 15px;
   outline: none;
   user-select: none;
+  display: flex;
+  align-items: center;
 }
 
 .icon:hover {
@@ -166,8 +168,8 @@
   flex-wrap: nowrap;
   margin: auto;
   padding: 1em 0;
-  box-shadow: 0 5px 10px var(--previous-weather-shadow) inset, 
-              0 -5px 10px var(--previous-weather-color) inset;
+  box-shadow: 5px 5px 10px var(--previous-weather-shadow) inset, 
+              -5px -5px 10px var(--previous-weather-color) inset;
   border-radius: 25px;
 }
 
@@ -199,7 +201,8 @@
   margin: 1.5em;
   padding: 1.5em;
   border-radius: 20px;
-  box-shadow: 10px 10px 20px var(--previous-weather-shadow);
+  box-shadow: -10px -10px 20px var(--previous-weather-color),
+              10px 10px 20px var(--previous-weather-shadow);
 }
 
 .icon2 {
@@ -243,6 +246,7 @@
               -7px -7px 14px #d9eae0 inset, 
               7px 7px 14px #9fada6 inset;
   width: 230px;
+  height: 243px;
 }
 
 .weather-previous-zone:hover {

@@ -44,7 +44,8 @@ const WeatherChart = ({ weatherData }) => {
             borderColor: 'rgba(0, 154, 255, 1)',
             type: 'bar',
             order: 2,
-            yAxisID: 'right-y-axis'
+            yAxisID: 'right-y-axis',
+            hoverBackgroundColor: 'rgba(0, 154, 255, 0.8)'
           }
         ]
       },

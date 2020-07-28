@@ -163,12 +163,23 @@ html, body, #root {
   outline: none;
   border-radius: 10px;
   padding: 0.6em;
-  background: linear-gradient(135deg, #2c2e31, #34373a);
+  background: linear-gradient(-45deg, #2c2e31, #34373a);
   box-shadow: 5px 5px 10px #2a2b2e, 
               -5px -5px 10px #383b3e;
   margin: 0 0.5em;
-  color: #ffffff;
+  color: #73899f;
   cursor: pointer;
+}
+
+#navbar-icon:hover {
+  background: linear-gradient(135deg, #2c2e31, #34373a);
+}
+
+#navbar-icon:active {
+  background: #313336;
+  box-shadow: inset 5px 5px 10px #2a2b2e, 
+              inset -5px -5px 10px #383b3e;
+  color: #75b0f1;
 }
 
 #navbar-icon>i {
