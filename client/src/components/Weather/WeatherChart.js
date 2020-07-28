@@ -67,12 +67,16 @@ const WeatherChart = ({ weatherData }) => {
         },
         elements: {
           point: {
-            radius: 5,
-            hitRadius: 20,
-            hoverRadius: 10
+            radius: 0,
+            hoverRadius: 7
           }
         },
         scales: {
+          xAxes: [{
+            gridLines: {
+              drawOnChartArea: false
+            }
+          }],
           yAxes: [{
             id: 'left-y-axis',
             type: 'linear',
