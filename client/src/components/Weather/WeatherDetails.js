@@ -16,7 +16,7 @@ const WeatherDetails = ({ weather }) => {
   }
 
   return (
-    <div id="details" className="weather-card-details">
+    <div id="details" className="weather-card-details weather-card">
       <div className="weather-details-main">
         <div className="weather-details-feels">
           <span id="feels_like">{Math.round(weather.main.feels_like)}°C</span>
@@ -39,7 +39,9 @@ const WeatherDetails = ({ weather }) => {
           ))}
         </div>
         <div className="weather-details-wind">
-          <p>wind: {weather.wind.speed} {weather.wind.deg}</p>
+          <i style={{ transform: `rotate(${weather.wind.deg}deg)` }} className="material-icons">navigation</i>
+          <p>Wind speed: {weather.wind.speed} m/s</p>
+          <p>Wind direction: {weather.wind.deg} deg</p>
         </div>
       </div>
     </div>

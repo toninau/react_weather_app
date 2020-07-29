@@ -8,7 +8,7 @@ const WeatherBasic = ({ weather }) => {
   const local = localDateString(weather.dt, 'basic')
 
   return (
-    <div id="basic" className="weather-card-basic">
+    <div id="basic" className="weather-card-basic weather-card">
       <div className="weather-basic-info">
         <h2>Weather in {weather.name}</h2>
         <div className="weather-basic-temp">

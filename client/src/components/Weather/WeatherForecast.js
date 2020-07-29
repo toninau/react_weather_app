@@ -26,10 +26,14 @@ const WeatherForecast = ({ forecast }) => {
   const forecastData = forecast.slice(0, 4)
 
   return (
-    <div id="forecast" className="weather-card-forecast">
-      {forecastData.map(data => (
-        <WeatherForecastSingle key={data.dt} data={data} />
-      ))}
+    <div id="forecast" className="weather-card">
+      <div className="weather-card-forecast">
+        <div className="forecast-scroll-box">
+          {forecastData.map(data => (
+            <WeatherForecastSingle key={data.dt} data={data} />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

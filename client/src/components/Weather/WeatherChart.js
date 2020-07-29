@@ -105,7 +105,7 @@ const WeatherChart = ({ weatherData }) => {
   })
 
   return (
-    <div id="chart" className="weather-card-chart">
+    <div id="chart" className="weather-card-chart weather-card">
       <WeatherChartInfo weather={weather} />
       <div style={{ overflowX: 'scroll' }}>
         <div style={{ width: '1500px' }}>
@@ -131,7 +131,7 @@ const WeatherChartInfo = ({ weather }) => {
         <span id="temp">{Math.round(weather.main.temp)}°C</span>
         <div>
           {weather.rain ?
-            <span>{weather.rain['3h']} mm</span> :
+            <span>{weather.rain['3h']} mm rain</span> :
             <span>no rain</span>
           }
         </div>
