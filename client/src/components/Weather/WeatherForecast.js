@@ -10,14 +10,18 @@ const WeatherForecastSingle = ({ data }) => {
   return (
     <div className="weather-forecast-single">
       <p>{local}</p>
-      <div className="weather-forecast-info">
-        <span>{Math.round(data.main.temp)}°C</span>
-        <img src={image} alt={`Icon ${data.weather[0].description}`} />
+      <div className="weather-forecast-frame">
+        <div className="weather-forecast-zone">
+          <div className="weather-forecast-info">
+            <span>{Math.round(data.main.temp)}°C</span>
+            <img src={image} alt={`Icon ${data.weather[0].description}`} />
+          </div>
+          {data.rain ?
+            <p>{data.rain['3h']} mm rain</p> :
+            <p>no rain</p>
+          }
+        </div>
       </div>
-      {data.rain ?
-        <p>{data.rain['3h']} mm rain</p> :
-        <p>no rain</p>
-      }
     </div>
   )
 }

@@ -239,22 +239,22 @@
   margin: 0.2em 0.2em 1em;
   padding: 1.5em;
   border-radius: 20px;
-  background: linear-gradient(135deg, #b1c0b8, #d3e4da);
-  border: 2px solid #85ab96;
+  background: linear-gradient(135deg, #abb5a3, #cbd7c2);
+  border: 2px solid #a7b39e;
   box-shadow: 7px 7px 14px var(--previous-weather-shadow),
               -7px -7px 14px var(--previous-weather-color),
-              -7px -7px 14px #d9eae0 inset, 
-              7px 7px 14px #9fada6 inset;
+              -7px -7px 14px #dbe7d0 inset, 
+              7px 7px 14px #a2ab9a inset;
   width: 230px;
   height: 243px;
 }
 
 .weather-previous-zone:hover {
-  background: linear-gradient(135deg, #becdc4, #e2f4e9);
+  background: linear-gradient(135deg, #c2c9be, #e7efe2);
   box-shadow: 7px 7px 14px var(--previous-weather-shadow),
               -7px -7px 14px var(--previous-weather-color),
-              -7px -7px 14px #dbece1 inset, 
-              7px 7px 14px #a2aea7 inset;
+              -7px -7px 14px #f8fff3 inset, 
+              7px 7px 14px #b8beb3 inset;
 }
 
 .weather-previous-info {

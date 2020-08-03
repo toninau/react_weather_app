@@ -131,7 +131,7 @@ const WeatherChartInfo = ({ weather }) => {
         <span id="temp">{Math.round(weather.main.temp)}°C</span>
         <div>
           {weather.rain ?
-            <span>{weather.rain['3h']} mm rain</span> :
+            <span>{weather.rain['3h']} mm</span> :
             <span>no rain</span>
           }
         </div>

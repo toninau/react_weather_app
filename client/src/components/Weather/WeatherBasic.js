@@ -25,9 +25,10 @@ const WeatherBasic = ({ weather }) => {
         </div>
       </div>
       <div className="weather-basic-desc">
-        <span>{weather.weather[0].main}</span>
-        <img src={image} alt={`Icon ${weather.weather[0].description}`} />
-        <span>{weather.weather[0].description}</span>
+        <div className="weather-basic-icon">
+          <img src={image} alt={`Icon ${weather.weather[0].description}`} />
+        </div>
+        <span className="weather-basic-desc-text">{weather.weather[0].description}</span>
       </div>
     </div>
   )

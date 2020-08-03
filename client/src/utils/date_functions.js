@@ -88,3 +88,11 @@ export const localDateArray = (dt, type) => {
   const dateArray = dateFormatted.filter(d => d.type !== 'literal').map(d => d.value)
   return dateArray
 }
+
+export const dayLightPercentage = (current, sunrise, sunset) => {
+  const p = ((current-sunrise)/(sunset-sunrise))*100
+  if (p > 100 || p < 0) {
+    return 0
+  }
+  return p
+}
