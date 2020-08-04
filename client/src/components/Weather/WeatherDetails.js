@@ -35,21 +35,23 @@ const WeatherDetails = ({ weather }) => {
           <span>feels like</span>
           <span id="feels_like">{Math.round(weather.main.feels_like)}°C</span>
         </div>
-        <div className="weather-details-daylight">
-          <div className="progress">
-            <div className="barOverflow">
-              <div ref={barRef} className="bar"></div>
+        <div className="weather-details-frame">
+          <div className="weather-details-daylight">
+            <div className="progress">
+              <div className="barOverflow">
+                <div ref={barRef} className="bar"></div>
+              </div>
+              <span>{current}</span>
             </div>
-            <span>{current}</span>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-            <div style={{ display: 'flex' }}>
-              <i className="material-icons">brightness_1</i>
-              <p>{sunrise} </p>
-            </div>
-            <div style={{ display: 'flex' }}>
-              <i className="material-icons">nights_stay</i>
-              <p>{sunset} </p>
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+              <div style={{ display: 'flex' }}>
+                <i className="material-icons">brightness_1</i>
+                <p>{sunrise} </p>
+              </div>
+              <div style={{ display: 'flex' }}>
+                <i className="material-icons">nights_stay</i>
+                <p>{sunset} </p>
+              </div>
             </div>
           </div>
         </div>

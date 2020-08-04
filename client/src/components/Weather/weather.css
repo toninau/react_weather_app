@@ -200,7 +200,6 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   align-items: center;
   flex-grow: 2;
 }
@@ -230,8 +229,8 @@
   flex-grow: 1;
   padding: 2em;
   border-radius: 20px;
-  box-shadow: 5px 5px 10px var(--main-shadow), 
-              -5px -5px 10px var(--main-light);
+  box-shadow: 5px 5px 10px var(--main-shadow) inset, 
+              -5px -5px 10px var(--main-light) inset;
 }
 
 .weather-details-data {
@@ -246,10 +245,27 @@
   padding: 0 0.25em;
 }
 
+.weather-details-frame {
+  display: flex;
+  margin: 3em 0 2.5em;
+  border-radius: 25px;
+  box-shadow: 20px 20px 40px var(--main-shadow), 
+              -20px -20px 40px var(--main-light),
+              5px 5px 10px var(--main-shadow) inset,
+              -5px -5px 10px var(--main-light) inset;
+}
+
 .weather-details-daylight {
   padding: 1em;
+  margin: 0.6em;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(135deg, #abb5a3, #cbd7c2);
+  border-radius: 20px;
+  box-shadow: -5px -5px 10px var(--main-shadow),
+              5px 5px 10px var(--main-light),
+              -5px -5px 10px #dbe7d0 inset, 
+              5px 5px 10px #a2ab9a inset;
 }
 
 .progress {
@@ -272,9 +288,9 @@
   width: 180px; height: 180px; /* full circle! */
   border-radius: 50%;
   box-sizing: border-box;
-  border: 10px solid #ccc;     /* half gray, */
-  border-bottom-color: #0bf;  /* half azure */
-  border-right-color: #0bf;
+  border: 10px solid #86888a;    
+  border-bottom-color: #384d6e;  
+  border-right-color: #384d6e;
 }
 
 /*Weather chart*/
@@ -291,8 +307,8 @@
   justify-content: space-around;
   flex-wrap: wrap;
   border-radius: 20px;
-  box-shadow: 5px 5px 10px var(--main-shadow), 
-                -5px -5px 10px var(--main-light);
+  box-shadow: 5px 5px 10px var(--main-shadow) inset, 
+                -5px -5px 10px var(--main-light) inset;
 }
 
 .weather-chart-date {
@@ -336,6 +352,32 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 1em;
+}
+
+/*Scroll*/
+
+.custom-scroll::-webkit-scrollbar-track {
+  box-shadow: 5px 5px 10px var(--main-shadow) inset, 
+              -5px -5px 10px var(--main-light) inset;
+  -webkit-box-shadow: 5px 5px 10px var(--main-shadow) inset, 
+                      -5px -5px 10px var(--main-light) inset;
+  border-radius: 100vh;
+  background-color: var(--main-color);
+  margin: 2em;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  height: 20px;
+  background-color: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  box-shadow: 5px 5px 10px var(--main-light) inset, 
+              -5px -5px 10px var(--main-shadow) inset;
+  -webkit-box-shadow: 5px 5px 10px var(--main-light) inset, 
+                      -5px -5px 10px var(--main-shadow) inset;
+  background: var(--main-color);
+  border-radius: 100vh;
 }
 
 @keyframes bg-animation {

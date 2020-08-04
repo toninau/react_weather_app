@@ -107,8 +107,8 @@ const WeatherChart = ({ weatherData }) => {
   return (
     <div id="chart" className="weather-card-chart weather-card">
       <WeatherChartInfo weather={weather} />
-      <div style={{ overflowX: 'scroll' }}>
-        <div style={{ width: '1500px' }}>
+      <div className="custom-scroll" style={{ overflowX: 'scroll' }}>
+        <div style={{ width: '1500px', marginBottom: '1em' }}>
           <canvas ref={chartRef}>
             <p>Failed to load chart</p>
           </canvas>

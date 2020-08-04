@@ -31,7 +31,7 @@ const WeatherForecast = ({ forecast }) => {
 
   return (
     <div id="forecast" className="weather-card">
-      <div className="weather-card-forecast">
+      <div className="weather-card-forecast custom-scroll">
         <div className="forecast-scroll-box">
           {forecastData.map(data => (
             <WeatherForecastSingle key={data.dt} data={data} />
