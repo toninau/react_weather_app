@@ -288,9 +288,9 @@
   width: 180px; height: 180px; /* full circle! */
   border-radius: 50%;
   box-sizing: border-box;
-  border: 10px solid #86888a;    
-  border-bottom-color: #384d6e;  
-  border-right-color: #384d6e;
+  border: 10px solid #a5b598;    
+  border-bottom-color: #34BFED;  
+  border-right-color: #34BFED;
 }
 
 /*Weather chart*/
@@ -357,10 +357,10 @@
 /*Scroll*/
 
 .custom-scroll::-webkit-scrollbar-track {
-  box-shadow: 5px 5px 10px var(--main-shadow) inset, 
-              -5px -5px 10px var(--main-light) inset;
-  -webkit-box-shadow: 5px 5px 10px var(--main-shadow) inset, 
-                      -5px -5px 10px var(--main-light) inset;
+  box-shadow: 3px 3px 6px var(--main-shadow) inset, 
+              -3px -3px 6px var(--main-light) inset;
+  -webkit-box-shadow: 3px 3px 6px var(--main-shadow) inset, 
+                      -3px -3px 6px var(--main-light) inset;
   border-radius: 100vh;
   background-color: var(--main-color);
   margin: 2em;
@@ -372,10 +372,10 @@
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-  box-shadow: 5px 5px 10px var(--main-light) inset, 
-              -5px -5px 10px var(--main-shadow) inset;
-  -webkit-box-shadow: 5px 5px 10px var(--main-light) inset, 
-                      -5px -5px 10px var(--main-shadow) inset;
+  box-shadow: 3px 3px 6px var(--main-light) inset, 
+              -3px -3px 6px var(--main-shadow) inset;
+  -webkit-box-shadow: 3px 3px 6px var(--main-light) inset, 
+                      -3px -3px 6px var(--main-shadow) inset;
   background: var(--main-color);
   border-radius: 100vh;
 }

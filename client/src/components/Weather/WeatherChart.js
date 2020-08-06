@@ -31,8 +31,8 @@ const WeatherChart = ({ weatherData }) => {
           {
             label: 'temperature',
             data: temperatureData,
-            backgroundColor: 'rgba(255, 204, 0, 0.2)',
-            borderColor: 'rgba(255, 204, 0, 1)',
+            backgroundColor: 'rgba(236, 110, 76, 0.2)',
+            borderColor: 'rgba(236, 110, 76, 1)',
             order: 1,
             yAxisID: 'left-y-axis',
             fill: 'start'
@@ -40,12 +40,12 @@ const WeatherChart = ({ weatherData }) => {
           {
             label: 'rain',
             data: rainData,
-            backgroundColor: 'rgba(0, 154, 255, 0.8)',
-            borderColor: 'rgba(0, 154, 255, 1)',
+            backgroundColor: 'rgba(52, 191, 237, 1)',
+            borderColor: 'rgba(52, 191, 237, 1)',
             type: 'bar',
             order: 2,
             yAxisID: 'right-y-axis',
-            hoverBackgroundColor: 'rgba(0, 154, 255, 0.8)'
+            hoverBackgroundColor: 'rgba(52, 191, 237, 1)',
           }
         ]
       },
@@ -76,6 +76,9 @@ const WeatherChart = ({ weatherData }) => {
           xAxes: [{
             gridLines: {
               drawOnChartArea: false
+            },
+            ticks: {
+              fontColor: '#384d6e'
             }
           }],
           yAxes: [{
@@ -83,7 +86,8 @@ const WeatherChart = ({ weatherData }) => {
             type: 'linear',
             position: 'left',
             ticks: {
-              callback: (value, index) => index === 0 ? '°C' : value
+              callback: (value, index) => index === 0 ? '°C' : value,
+              fontColor: '#384d6e'
             }
           },
           {
@@ -93,7 +97,8 @@ const WeatherChart = ({ weatherData }) => {
             ticks: {
               beginAtZero: true,
               suggestedMax: 14,
-              callback: (value, index) => index === 0 ? 'mm' : value
+              callback: (value, index) => index === 0 ? 'mm' : value,
+              fontColor: '#384d6e'
             },
             gridLines: {
               drawOnChartArea: false
