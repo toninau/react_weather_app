@@ -20,14 +20,26 @@
   flex-wrap: wrap;
   position: sticky;
   position: -webkit-sticky;
-  top: 72px;
+  top: 67px;
   height: fit-content;
   z-index: 1;
+  padding: 0.5em 0;
 }
 
-.weather-links>a {
+.link-button {
   padding: 1em;
   height: min-content;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+}
+
+.selected {
+  /*border-bottom: 3px solid white;*/
+  border-bottom: 3px solid #34bfed;
+  color: #34bfed;
 }
 
 /*All weather cards*/
@@ -395,17 +407,21 @@
   border-radius: 2px;
 }
 
-@media only screen and (max-width: 1270px) {
+@media only screen and (max-width: 1284px) {
   .weather-links {
     background-color: #313336;
-    top: auto;
     flex-direction: row;
     justify-content: center;
-    position: fixed;
-    bottom: 0;
     width: 100%;
   }
-  .weather-links>a {
+
+  .link-button {
+    color: white;
     padding: 0.2em 0.5em;
+  }
+
+  .selected {
+    border-bottom: 3px solid #34bfed;
+    color: #34bfed;
   }
 }

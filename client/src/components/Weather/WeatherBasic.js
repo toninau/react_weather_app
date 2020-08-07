@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 
 import { localDateString } from '../../utils/date_functions'
 
-const WeatherBasic = ({ weather }) => {
+const WeatherBasic = React.forwardRef(({ weather }, ref) => {
   const image = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`
   const local = localDateString(weather.dt, 'basic')
 
   return (
-    <div id="basic" className="weather-card-basic weather-card">
+    <div ref={ref} id="basic" className="weather-card-basic weather-card">
       <div className="weather-basic-info">
         <h2>Weather in {weather.name}</h2>
         <div className="weather-basic-temp">
@@ -32,7 +32,9 @@ const WeatherBasic = ({ weather }) => {
       </div>
     </div>
   )
-}
+})
+
+WeatherBasic.displayName = 'WeatherBasic'
 
 WeatherBasic.propTypes = {
   weather: PropTypes.shape({

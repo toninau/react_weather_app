@@ -26,11 +26,11 @@ const WeatherForecastSingle = ({ data }) => {
   )
 }
 
-const WeatherForecast = ({ forecast }) => {
+const WeatherForecast = React.forwardRef(({ forecast }, ref) => {
   const forecastData = forecast.slice(0, 4)
 
   return (
-    <div id="forecast" className="weather-card">
+    <div ref={ref} id="forecast" className="weather-card">
       <div className="weather-card-forecast custom-scroll">
         <div className="forecast-scroll-box">
           {forecastData.map(data => (
@@ -40,7 +40,9 @@ const WeatherForecast = ({ forecast }) => {
       </div>
     </div>
   )
-}
+})
+
+WeatherForecast.displayName = 'WeatherForecast'
 
 WeatherForecast.propTypes = {
   forecast: PropTypes.arrayOf(PropTypes.shape({
