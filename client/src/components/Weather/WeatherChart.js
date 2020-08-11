@@ -5,7 +5,7 @@ import Chart from 'chart.js'
 import { useMountEffect } from '../../hooks'
 import { localDateString, localDateArray } from '../../utils/date_functions'
 
-const WeatherChart = React.forwardRef(({ weatherData }, ref) => {
+const WeatherChart = ({ weatherData }) => {
   const chartRef = React.createRef()
   const [weather, setWeather] = useState(weatherData[0])
 
@@ -110,7 +110,7 @@ const WeatherChart = React.forwardRef(({ weatherData }, ref) => {
   })
 
   return (
-    <div ref={ref} id="chart" className="weather-card-chart weather-card">
+    <div id="chart" className="weather-card-chart weather-card">
       <WeatherChartInfo weather={weather} />
       <div className="custom-scroll" style={{ overflowX: 'scroll' }}>
         <div style={{ width: '1500px', marginBottom: '1em' }}>
@@ -121,9 +121,7 @@ const WeatherChart = React.forwardRef(({ weatherData }, ref) => {
       </div>
     </div>
   )
-})
-
-WeatherChart.displayName = 'WeatherChart'
+}
 
 const WeatherChartInfo = ({ weather }) => {
   const date = localDateString(weather.dt, 'chart-info')

@@ -46,6 +46,13 @@
 }
 
 /*All weather cards*/
+.weather-card-container {
+  padding-top: 2em;
+}
+
+.weather-card-container:last-child {
+  padding: 2em 0;
+}
 
 .weather-card {
   border-radius: 25px;
@@ -54,7 +61,6 @@
   background: linear-gradient(-45deg, #cbd4dd, #f2fbff);
   box-shadow:  6px 6px 12px #c0c8d0, 
              -6px -6px 12px #ffffff;
-  margin: 2em 0;
 }
 
 /*Weather basic*/

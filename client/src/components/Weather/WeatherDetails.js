@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { localDateString, dayLightPercentage } from '../../utils/date_functions'
 import { useMountEffect } from '../../hooks'
 
-const WeatherDetails = React.forwardRef(({ weather }, ref) => {
+const WeatherDetails = ({ weather }) => {
   const barRef = useRef(null)
   const sunrise = localDateString(weather.sys.sunrise, 'details')
   const sunset = localDateString(weather.sys.sunset, 'details')
@@ -29,7 +29,7 @@ const WeatherDetails = React.forwardRef(({ weather }, ref) => {
   })
 
   return (
-    <div ref={ref} id="details" className="weather-card-details weather-card">
+    <div id="details" className="weather-card-details weather-card">
       <div className="weather-details-main">
         <div className="weather-details-feels">
           <span>feels like</span>
@@ -68,9 +68,7 @@ const WeatherDetails = React.forwardRef(({ weather }, ref) => {
       </div>
     </div>
   )
-})
-
-WeatherDetails.displayName = 'WeatherDetails'
+}
 
 WeatherDetails.propTypes = {
   weather: PropTypes.shape({

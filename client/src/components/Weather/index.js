@@ -101,10 +101,18 @@ const Weather = ({ fetchWeather }) => {
           </button>
         </div>
         <div className="weather-container">
-          <WeatherBasic ref={basicRef} weather={weather.basic} />
-          <WeatherForecast ref={forecastRef} forecast={weather.forecast} />
-          <WeatherDetails ref={detailsRef} weather={weather.basic} />
-          <WeatherChart ref={chartRef} weatherData={weather.forecast} />
+          <div className="weather-card-container" ref={basicRef}>
+            <WeatherBasic weather={weather.basic} />
+          </div>
+          <div className="weather-card-container" ref={forecastRef}>
+            <WeatherForecast forecast={weather.forecast} />
+          </div>
+          <div className="weather-card-container" ref={detailsRef}>
+            <WeatherDetails weather={weather.basic} />
+          </div>
+          <div className="weather-card-container" ref={chartRef}>
+            <WeatherChart weatherData={weather.forecast} />
+          </div>
         </div>
       </div>
     )
