@@ -59,6 +59,7 @@
   font-size: 80px;
   color: var(--main-font-color);
   text-align: center;
+  font-weight: initial;
 }
 
 .home-search {

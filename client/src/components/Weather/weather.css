@@ -37,6 +37,7 @@
   color: var(--main-font-color);
   transition: padding 1s ease;
   font-size: 14px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .selected {
