@@ -10,7 +10,7 @@ const WeatherBasic = React.forwardRef(({ weather }, ref) => {
   return (
     <div ref={ref} id="basic" className="weather-card-basic weather-card">
       <div className="weather-basic-info">
-        <h2>Weather in {weather.name}</h2>
+        <h1>Weather in {weather.name}</h1>
         <div className="weather-basic-temp">
           <span id="temp">{Math.round(weather.main.temp)}</span>
           <div className="weather-basic-minmax">

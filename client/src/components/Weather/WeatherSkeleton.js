@@ -4,7 +4,7 @@ const WeatherSkeleton = () => {
   return (
     <div className="weather">
       <div className="weather-container-skeleton">
-        <div className="skeleton-card weather-card">
+        <div style={{ minHeight: '413px' }} className="skeleton-card weather-card">
           <div>
             <div className="skeleton-shape" style={{ height: '32px', width: '257px' }}></div>
             <div className="skeleton-shape" style={{ height: '128px', width: '257px' }}></div>
@@ -17,13 +17,13 @@ const WeatherSkeleton = () => {
             <div className="skeleton-shape" style={{ height: '21px', width: '90px' }}></div>
           </div>
         </div>
-        <div className="skeleton-card weather-card">
+        <div style={{ minHeight: '366px' }} className="skeleton-card weather-card">
           <div className="skeleton-shape" style={{ height: '240px', width: '183px' }}></div>
           <div className="skeleton-shape" style={{ height: '240px', width: '183px' }}></div>
           <div className="skeleton-shape" style={{ height: '240px', width: '183px' }}></div>
           <div className="skeleton-shape" style={{ height: '240px', width: '183px' }}></div>
         </div>
-        <div className="skeleton-card weather-card">
+        <div style={{ minHeight: '393px' }} className="skeleton-card weather-card">
           <div>
             <div className="skeleton-shape" style={{ height: '32px', width: '257px' }}></div>
             <div className="skeleton-shape" style={{ height: '128px', width: '257px' }}></div>
@@ -32,7 +32,7 @@ const WeatherSkeleton = () => {
           </div>
           <div className="skeleton-shape" style={{ height: '240px', width: '183px' }}></div>
         </div>
-        <div className="skeleton-card weather-card">
+        <div style={{ minHeight: '601px' }} className="skeleton-card weather-card">
           <div className="skeleton-shape" style={{ height: '400px', width: '100%' }}></div>
         </div>
       </div>

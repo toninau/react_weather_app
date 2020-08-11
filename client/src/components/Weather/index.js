@@ -16,7 +16,6 @@ const Weather = ({ fetchWeather }) => {
   const weather = useSelector(state => state.weather)
 
   const [visibleSection, setVisibleSection] = useState(null)
-
   const basicRef = useRef(null)
   const forecastRef = useRef(null)
   const detailsRef = useRef(null)
@@ -75,7 +74,6 @@ const Weather = ({ fetchWeather }) => {
       behavior: 'smooth'
     })
   }
-
 
   if (weather) {
     return (
