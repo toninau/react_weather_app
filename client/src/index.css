@@ -5,7 +5,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
+body, input, button {
   font-family: 'Raleway', sans-serif;
 }
 

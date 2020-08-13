@@ -26,7 +26,7 @@ const SearchForm = React.forwardRef(({ handleSubmit }, ref) => {
         <i className="material-icons">search</i>
       </button>
       <div className="search-field">
-        <input ref={inputField} type="text" placeholder="Search..." value={city}
+        <input ref={inputField} type="text" placeholder="Search" value={city}
           onChange={({ target }) => setCity(target.value)} />
         <i className="material-icons" id="search-field-icon">radio_button_checked</i>
       </div>

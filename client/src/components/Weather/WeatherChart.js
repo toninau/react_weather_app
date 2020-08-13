@@ -142,7 +142,7 @@ const WeatherChartInfo = ({ weather }) => {
         </div>
       </div>
       <div className="weather-chart-desc">
-        <img src={image} alt={`Icon ${weather.weather[0].description}`} />
+        <img width="100px" height="100px" src={image} alt={`Icon ${weather.weather[0].description}`} />
         <span>{weather.weather[0].description}</span>
       </div>
     </div>

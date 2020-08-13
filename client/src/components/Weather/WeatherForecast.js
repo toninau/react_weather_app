@@ -6,7 +6,7 @@ import { localDateString } from '../../utils/date_functions'
 const WeatherForecastSingle = ({ data }) => {
   const image = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
   const local = localDateString(data.dt, 'forecast')
-
+  //width and height
   return (
     <div className="weather-forecast-single">
       <p>{local}</p>
@@ -14,7 +14,7 @@ const WeatherForecastSingle = ({ data }) => {
         <div className="weather-forecast-zone">
           <div className="weather-forecast-info">
             <span>{Math.round(data.main.temp)}°C</span>
-            <img src={image} alt={`Icon ${data.weather[0].description}`} />
+            <img width="100px" height="100px" src={image} alt={`Icon ${data.weather[0].description}`} />
           </div>
           {data.rain ?
             <p>{data.rain['3h']} mm rain</p> :

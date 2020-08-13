@@ -37,7 +37,6 @@
   color: var(--main-font-color);
   transition: padding 1s ease;
   font-size: 14px;
-  font-family: 'Raleway', sans-serif;
 }
 
 .selected {
@@ -123,7 +122,8 @@
 }
 
 .weather-basic-icon>img {
-  max-width: 200px;
+  width: 200px;
+  height: 200px;
   margin: 0.5em;
   border-radius: 100vh;
   background: linear-gradient(135deg, #abb5a3, #cbd7c2);

@@ -11,9 +11,8 @@ const WeatherSkeleton = () => {
             <div className="skeleton-shape" style={{ height: '21px', width: '257px' }}></div>
             <div className="skeleton-shape" style={{ height: '21px', width: '90px' }}></div>
           </div>
-          <div>
-            <div className="skeleton-shape" style={{ height: '21px', width: '50px' }}></div>
-            <div className="skeleton-shape" style={{ height: '200px', width: '200px' }}></div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div className="skeleton-shape" style={{ height: '200px', width: '200px', borderRadius: '50%' }}></div>
             <div className="skeleton-shape" style={{ height: '21px', width: '90px' }}></div>
           </div>
         </div>
