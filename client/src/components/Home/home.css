@@ -173,6 +173,7 @@
   box-shadow: 5px 5px 10px var(--previous-weather-shadow) inset, 
               -5px -5px 10px var(--previous-weather-color) inset;
   border-radius: 25px;
+  height: 418px;
 }
 
 .weather-card-previous::-webkit-scrollbar-track {
@@ -285,6 +286,7 @@ th>i {
   text-align: center;
   cursor: pointer;
   color: var(--main-font-color);
+  margin: auto;
 }
 
 #no-previous-searches>a {
@@ -300,22 +302,27 @@ th>i {
   transition: opacity 500ms ease-in;
 }
 
-.fade-enter{
+.fade-enter {
   opacity: 0;
+  transform: translateX(-100%);
 }
-.fade-exit{
+.fade-enter-active {
   opacity: 1;
+  transform: translateX(0%);
 }
-.fade-enter-active{
+.fade-exit {
   opacity: 1;
+  transform: translateX(0%);
 }
-.fade-exit-active{
+.fade-exit-active {
   opacity: 0;
+  transform: translateX(100%);
 }
 .fade-enter-active,
-.fade-exit-active{
-  transition: opacity 500ms;
+.fade-exit-active {
+  transition: opacity 500ms, transform 500ms;
 }
+
 
 /*Media*/
 @media only screen and (max-width: 500px) {
