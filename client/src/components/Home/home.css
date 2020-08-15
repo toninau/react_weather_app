@@ -161,6 +161,7 @@
   position: relative;
   overflow: auto;
   display: flex;
+  scrollbar-width: thin;
 }
 
 .scroll-box {
@@ -289,6 +290,31 @@ th>i {
 #no-previous-searches>a {
   text-decoration: none;
   color: var(--main-font-color);
+}
+
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-enter{
+  opacity: 0;
+}
+.fade-exit{
+  opacity: 1;
+}
+.fade-enter-active{
+  opacity: 1;
+}
+.fade-exit-active{
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-exit-active{
+  transition: opacity 500ms;
 }
 
 /*Media*/

@@ -8,6 +8,7 @@ const Navbar = ({ submit }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     submit(city)
+    setCity('')
   }
 
   return (

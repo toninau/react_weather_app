@@ -14,7 +14,7 @@ const WeatherForecastSingle = ({ data }) => {
         <div className="weather-forecast-zone">
           <div className="weather-forecast-info">
             <span>{Math.round(data.main.temp)}°C</span>
-            <img width="100px" height="100px" src={image} alt={`Icon ${data.weather[0].description}`} />
+            <img width="100" height="100" src={image} alt={`Icon ${data.weather[0].description}`} />
           </div>
           {data.rain ?
             <p>{data.rain['3h']} mm rain</p> :

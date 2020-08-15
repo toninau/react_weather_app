@@ -1,27 +1,42 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { CSSTransition, TransitionGroup, SwitchTransition } from 'react-transition-group'
 
 import { localDateString, userDateString } from '../../utils/date_functions'
 
 const PreviousWeatherList = ({ weathers, removeWeather, focus }) => {
-
   return (
     <div className="weather-card-previous">
-      <div className="scroll-box">
-        {weathers.length ?
-          weathers.map(w => (
-            <PreviousWeather key={w.id}
-              weather={w}
-              removeWeather={removeWeather}
-            />
-          )) :
-          <div id="no-previous-searches" onClick={focus}>
-            <h2>no previous searches</h2>
-            <p>start by entering a location above</p>
+      <SwitchTransition>
+        <CSSTransition
+          key={weathers.length ? 'list' : 'empty'}
+          addEndListener={(node, done) => node.addEventListener('transitionend', done, false)}
+          classNames='fade'>
+          <div className="scroll-box">
+            {weathers.length ?
+              <TransitionGroup component={null}>
+                {weathers.map(w => (
+                  <CSSTransition
+                    key={w.id}
+                    timeout={500}
+                    enter={false}
+                    classNames="item">
+                    <PreviousWeather
+                      weather={w}
+                      removeWeather={removeWeather}
+                    />
+                  </CSSTransition>
+                ))}
+              </TransitionGroup> :
+              <div id="no-previous-searches" onClick={focus}>
+                <h2>no previous searches</h2>
+                <p>start by entering a location above</p>
+              </div>
+            }
           </div>
-        }
-      </div>
+        </CSSTransition>
+      </SwitchTransition>
     </div>
   )
 }
