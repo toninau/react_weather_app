@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server",
+    "start": "node server.js",
     "dev": "nodemon server",
     "eslint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "install:ui": "cd client && npm install",
     "build:ui": "cd client && rm -rf build && npm run build",
-    "eslint:ui": "cd client && npm run eslint"
+    "eslint:ui": "cd client && npm run eslint",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
