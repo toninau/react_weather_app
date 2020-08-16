@@ -125,7 +125,7 @@ const WeatherChart = ({ weatherData }) => {
 
 const WeatherChartInfo = ({ weather }) => {
   const date = localDateString(weather.dt, 'chart-info')
-  const image = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
+  const image = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
 
   return (
     <div className="weather-chart-info">

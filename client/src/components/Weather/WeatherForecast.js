@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import { localDateString } from '../../utils/date_functions'
 
 const WeatherForecastSingle = ({ data }) => {
-  const image = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+  const image = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
   const local = localDateString(data.dt, 'forecast')
-  //width and height
+
   return (
     <div className="weather-forecast-single">
       <p>{local}</p>

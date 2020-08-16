@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { localDateString } from '../../utils/date_functions'
 
 const WeatherBasic = ({ weather }) => {
-  const image = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`
+  const image = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`
   const local = localDateString(weather.dt, 'basic')
 
   return (

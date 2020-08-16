@@ -44,7 +44,7 @@ const PreviousWeatherList = ({ weathers, removeWeather, focus }) => {
 const PreviousWeather = ({ weather, removeWeather }) => {
   const localTime = localDateString(weather.localDate, 'forecast')
   const userTime = userDateString(weather.userDate)
-  const image = `http://openweathermap.org/img/wn/${weather.icon}.png`
+  const image = `https://openweathermap.org/img/wn/${weather.icon}.png`
 
   return (
     <div className="weather-previous">
