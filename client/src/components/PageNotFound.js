@@ -5,7 +5,7 @@ const NotFound = () => {
   const location = useLocation()
 
   return (
-    <div>
+    <div className="error-page">
       <h3>No match for <code>{location.pathname}</code></h3>
       <p>Page not found</p>
       <Link to="/home">

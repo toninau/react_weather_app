@@ -81,13 +81,22 @@ const App = () => {
           </div>
         </Route>
         <Route path="/not_found">
-          <CityNotFound />
+          <div className="container">
+            <Navbar submit={submit} />
+            <CityNotFound />
+          </div>
         </Route>
         <Route path="/no_more">
-          <TooManyRequests />
+          <div className="container">
+            <Navbar submit={submit} />
+            <TooManyRequests />
+          </div>
         </Route>
         <Route path="*">
-          <PageNotFound />
+          <div className="container">
+            <Navbar submit={submit} />
+            <PageNotFound />
+          </div>
         </Route>
       </Switch>
       <Footer />

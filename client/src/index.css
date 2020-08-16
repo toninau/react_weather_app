@@ -197,6 +197,21 @@ html, body, #root {
 #navbar-icon>i {
   vertical-align: middle;
 }
+/*Error page*/
+
+.error-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #cbd4dd, #f2fbff);
+  color: var(--main-font-color)
+}
+
+.error-page a {
+  color: var(--main-font-color);
+}
 
 /*Media*/
 @media only screen and (max-width: 500px) {
