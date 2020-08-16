@@ -10,7 +10,7 @@ const requestLogger = (request, _response, next) => {
 }
 
 const unknownEndpoint = (_request, response) => {
-  response.status(404).sendFile(path.resolve('client', 'build', 'index.html'))
+  response.sendFile(path.resolve('client', 'build', 'index.html'))
 }
 
 const errorHandler = (error, _request, response, next) => {
