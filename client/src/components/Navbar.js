@@ -22,7 +22,7 @@ const Navbar = ({ submit }) => {
             <i className="material-icons">search</i>
           </button>
           <div className="navbar-input">
-            <input type="text" value={city} onChange={({ target }) => setCity(target.value)} />
+            <input type="text" placeholder="Search" value={city} onChange={({ target }) => setCity(target.value)} />
             {city.length > 0 &&
               <button type="button" onClick={() => setCity('')}>
                 <i className="material-icons">close</i>
