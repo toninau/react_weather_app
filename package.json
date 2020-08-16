@@ -11,7 +11,7 @@
     "install:ui": "cd client && npm install",
     "build:ui": "cd client && rm -rf build && npm run build",
     "eslint:ui": "cd client && npm run eslint",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build && cd ../"
   },
   "repository": {
     "type": "git",
