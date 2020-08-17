@@ -6,6 +6,7 @@ import { localDateString } from '../../utils/date_functions'
 const WeatherBasic = ({ weather }) => {
   const image = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`
   const local = localDateString(weather.dt, 'basic')
+  const timezone = weather.timezone/3600
 
   return (
     <div id="basic" className="weather-card-basic weather-card">
@@ -21,7 +22,7 @@ const WeatherBasic = ({ weather }) => {
         </div>
         <div className="weather-basic-date">
           <span>As of {local}</span>
-          <span>local time</span>
+          <span>UTC {timezone > 0 ? `+${timezone}` : timezone}</span>
         </div>
       </div>
       <div className="weather-basic-desc">
