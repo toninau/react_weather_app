@@ -14,8 +14,10 @@ https://weather-app-tn.herokuapp.com/home
   * [.ENV](#.env)
   * [NPM](#npm)
 * [Client](#client)
+  * [Tests](#tests)
 * [Server](#server)
   * [API](#api)
+    * [Success](#success)
     * [Errors](#errors)
 
 ## About
@@ -30,7 +32,7 @@ Project uses ESLint and has seperate ESLint configuration files for server and c
 
 ### Demo
 
-<img alt="demo" src="site.gif?raw=true" width="600">
+<img alt="demo" src="./assets/site.gif?raw=true" width="600">
 
 ## Setup
 
@@ -83,7 +85,9 @@ module.exports = {
 
 ## Client
 
-Client is initialized with create-react-app. Client uses React with Redux and PropTypes. Also, Axios and Chart.js are used. 
+Client is initialized with create-react-app. Client uses React with Redux and PropTypes. Also, Axios, Chart.js and React Router are used.
+
+Tests are made with Jest and [react-testing-library](https://github.com/testing-library/react-testing-library). Also [jest-dom](https://github.com/testing-library/jest-dom) is used.
 
 Five most recent weather searches are stored in localStorage and displayed on the home page.
 
@@ -92,6 +96,21 @@ Location's weather can be accessed directly when appropriate URL is given.
 ```
 For example:
 https://weather-app-tn.herokuapp.com/weather/paris
+```
+
+### Tests
+
+To run tests:
+
+```
+$ cd client
+$ CI=true npm test
+```
+
+or (in root of the project)
+
+```
+$ npm run test:ui
 ```
 
 ## Server
@@ -126,7 +145,9 @@ For documentation:
 https://openweathermap.org/forecast5
 ```
 
-`City was found`
+#### Success
+
+>City was found
 
 ```
 Status Code 🟢 200 OK
@@ -134,13 +155,13 @@ Status Code 🟢 200 OK
 
 #### Errors
 
-`City was not found`
+>City was not found
 
 ```
 Status Code 🔴 400 Bad Request
 ```
 
-`Rate limit exceeded`
+>Rate limit exceeded
 
 ```
 Status Code 🔴 429 Too Many Requests

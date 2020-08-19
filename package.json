@@ -8,6 +8,7 @@
     "dev": "nodemon server",
     "eslint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test:ui": "cd client && npm run test --watchAll=false",
     "install:ui": "cd client && npm install",
     "build:ui": "cd client && rm -rf build && npm run build",
     "eslint:ui": "cd client && npm run eslint",
