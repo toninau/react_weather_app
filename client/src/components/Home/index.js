@@ -48,11 +48,13 @@ const Home = ({ submit }) => {
   }
 
   const focusSearchFormInput = () => {
-    searchFormRef.current.focusOnInput()
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     })
+    setTimeout(() => {
+      searchFormRef.current.focusOnInput()
+    }, 600)
   }
 
   return (
