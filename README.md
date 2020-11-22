@@ -3,7 +3,7 @@
 > shows weather neatly
 
 Web app that shows current weather and forecast for a city. Site is running on heroku.
-https://weather-app-tn.herokuapp.com/home
+https://weather-app-tn.herokuapp.com/home (might take a while to start)
 
 ## Table of contents
 
